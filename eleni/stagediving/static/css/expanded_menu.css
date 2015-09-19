@@ -1,0 +1,786 @@
+.expanded{
+	width:480px;
+	z-index: 100;
+	background-color:#333333;
+	font-family:"Fusion Sans Pro Greek Heavy","Fusion Sans Pro Heavy";
+	color:#FFF;
+	font-size:28px;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:16px;
+	position:fixed;
+	left: -450px;
+	top: 0px;
+        height:100%;
+	-webkit-transition:left -1s ease-in;
+   -moz-transition:left -1s ease-in;
+   -o-transition:left -1s ease-in;
+   transition:left -1s ease-in;
+   overflow-y: scroll;
+box-shadow: 8px 0px 15px rgba(34, 25, 25, 0.4);
+}
+
+
+.expanded#AboutSD{
+min-width: 470.4px !important;
+}
+#search_by-artist h2, .expanded h2 {
+	margin:0px;
+	letter-spacing: 2px;
+font-size: 42px;
+margin-top: 12px;
+font-family: "Fusion Sans Pro Greek Heavy","Fusion Sans Pro Heavy";
+	}
+
+#search_by-artist hr, .expanded hr,#logo hr {
+	height: 5px;
+background-color: white;
+margin-top: 1px;;
+width: 100%;
+border:none;
+	}
+
+#list_view_conten hr{
+	height: 1px;
+background-color: #CCCCCC;
+margin-top: 1px;
+width: 100%;
+border: none;
+}
+}
+.search_content > hr{
+
+
+	width:100%;
+	background-color:#333333;}
+
+.close{
+	float: right;
+margin-top: -34px;
+margin-right: 0px;
+background-image: url(../icons/close.jpg);
+width: 22px;
+height: 22px;
+cursor:pointer;
+	}
+.close:hover{
+
+     background-image: url(../icons/close-over.png);
+}
+
+/*#artist_field{
+	border:none;
+	height:30px;
+	background-image:url(../../images/search.jpg);
+	background-position:right;
+	background-repeat:no-repeat;
+	width:100%;
+	font-size:15px;
+	font-weight:bolder;
+	font-weight:bold;
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.69) inset;
+	cursor:pointer;}
+
+	#artist_field:hover{
+	-moz-box-shadow: 2px 1px 5px #ED1C24;
+	-webkit-box-shadow: 2px 1px 5px #ED1C24;
+        box-shadow: 2px 1px 5px #ED1C24;
+	}
+	*/
+fieldset#artist{
+	
+	background: white;
+	
+	margin-top: 0px;
+	margin-left: -1px;
+	height:9px;
+	border: none;
+    border: black solid 1px;
+	}
+fieldset#artist:hover{
+	border:#F00 solid 1px;
+	}
+#artist #artist_field{
+margin-top: -5px;
+margin-left: -9px;
+position: absolute;
+height: 22px;
+border: none;
+width: 320px;
+outline: none;
+font-size:16px;
+padding-left: 10px;
+	color:black;
+
+}
+input::-webkit-input-placeholder {
+   color: black;
+}
+input::-moz-input-placeholder {
+   color: black;
+}
+
+input::-ms-input-placeholder {
+   color: black;
+}
+
+input::-moz-placeholder {
+   color: black;
+}
+
+
+fieldset#artist #search{
+	float: right;
+	margin-right: -16px;
+	background-image:url(../icons/search.jpg);
+	margin-left: 0px;
+	margin-top: -6px;
+	width: 34px;
+	border: none;
+	height: 30px;
+	cursor:pointer;
+}
+
+hr#line{
+	border: none;
+height: 2px;
+background-color: #999;
+	margin-bottom:20px;
+	margin-top:20px;}
+
+.search_content{
+font-family: Helvetica, Arial, sans-serif;
+margin-top: 3px;
+font-size: 14px;
+	}
+
+.search_by-artist .search_content .item{
+	padding-left: 7px;
+	padding-top:19px;
+	height:111px;
+	width:100%;
+	border-bottom: 1px solid #999999;
+	cursor: pointer;
+	}
+.search_by-artist .search_content .poster{
+	width:63px;
+	height:90px;
+	background-image:url(../icons/thumb_poster.jpg);
+        background-size: cover;
+	}
+
+.search_by-artist .search_content .info{
+	line-height:20px;
+
+	margin-left: 82px;
+	margin-top: -84px;}
+
+.search_by-artist .search_content .info .date, .search_by-artist .search_content .info .artist{
+	font-size: 12px;
+	font-family: Helvetica, Arial, sans-serif;
+	}
+.search_by-artist .search_content .info .artist{
+	text-transform:uppercase;
+	
+	font-weight:bold;}
+.search_by-artist .search_content .info .place, .city{
+	line-height:16px;
+	font-size: 12px;
+	color:#999999;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+/*#search_by-artist .search_content .attend{
+	width:100px;
+	height:50px;
+	background-image:url(../../images/attend.jpg);
+	float:right;
+	background-repeat:no-repeat;
+	margin-top: -55px;
+	margin-right: -30px;
+	font-size: 20px;
+	}
+
+	.search_by-artist .search_content .attend .text{
+	margin-top: 9px;
+margin-left: 12px;
+letter-spacing: 1px;}
+	*/
+#list_view_exp #list_view_conten .item .alert
+{
+	font-family: arial;
+	margin-top: -5px;
+	margin-bottom: -16px;
+	float: left;
+	margin-left: 513px;
+	font-size: 12px;
+	color: red;	
+	display: none;
+	
+}
+
+#my_concerts_exp .search_content .attend{
+	
+	background-image: url(../icons/attend-active-2.png);
+	margin-right: -55px;
+	}
+
+.search_by-artist .search_content .alert
+{
+	margin-right: 43px;
+	font-family: arial;
+	margin-top: -74px;
+	float: right;
+	font-size: 12px;
+	color: red;
+	display: none;
+}
+
+.search_by-artist .search_content .attend, #list_view_exp #list_view_conten .item .attend {
+	width:135px;
+	height:50px;
+	/*background-image:url(../icons/attend-active-2.png);*/
+	background-image: url(../icons/attend.png);
+	float:right;
+	background-repeat:no-repeat;
+	margin-top: -61px;
+	margin-right: -15px;
+	font-size: 20px;
+	}
+
+	#list_view_exp #list_view_conten .item .attend
+	{
+		margin-top: 7px;
+	}
+.search_by-artist .search_content .attend.attend_active, #list_view_exp #list_view_conten .item .attend.attend_active
+{
+	background-image: url(../icons/attend-active.png);
+}
+#search_by-artist .search_content .attend:hover, #list_view_exp #list_view_conten .item .attend:hover{
+	background-image:url(../icons/attnd-over.png);
+	cursor:pointer;
+	}
+
+.search_by-artist .attend_number{
+	margin-left: 25px;
+	margin-top: 13px;
+	font-family: "Fusion Sans Pro Greek Heavy","Fusion Sans Pro Heavy";
+	}
+
+
+.cities_buttom{
+	background-image:url(../icons/no_selected.jpg);
+	background-repeat:no-repeat;
+	background-position:left;
+	width: 15px;
+	height: 15px;
+	
+	}
+
+.city_name{
+	margin-left: 27px;
+margin-top: -16px;
+	}
+.city
+{
+	color: white;
+	opacity: 0.5;
+	cursor: text;
+}
+
+
+.city.available
+{
+	cursor: pointer;
+	opacity:1;
+}
+
+.venue
+{
+	color:#ccc;
+}
+.city, .venue{
+	
+	font-size: 12px;
+	
+	font-family:Helvetica, Arial, sans-serif;
+	margin-top: 10px;
+	text-transform:capitalize;
+}
+
+.city_letter
+{
+	font-size:45px;
+	font-family:"Fusion Sans Pro Greek Heavy","Fusion Sans Pro Heavy";
+	margin-bottom: 12px
+}
+#left_cities{
+	width: 180px;
+	margin-top: 31px;
+	}
+#right_cities{
+	margin-top: -859px;
+width: 240px;
+
+	float:right;}
+
+.letter{
+	
+	margin-bottom: 37px;}
+
+#login_register .login , #login_register .register{
+	font-family: Helvetica, Arial, sans-serif;
+	/*width:50%;*/
+	color: white;
+	font-size: 14px;
+}
+
+
+#login_register .login form #agree, #login_register .register form #agree, #add_event_exp #add_event_content .you_have_to_login .sign_up form #agree
+{
+	font-size: 11px;
+}
+#login_register .login{
+	float:left;
+	margin-top: 5px;
+	text-align:left;
+	margin-left: 0px;}
+
+#login_register .login #reasons{ margin-top: 10px; }
+#login_register .login form #agree{ color: rgb(211,211,211) }
+
+#login_register .login #reasons > ol
+{
+	margin-top: 10px;
+	margin-left: -10px;
+}
+#login_register .register, #add_event_exp .register{
+	cursor:pointer;
+	margin-top: 5px;
+	line-height: 20px;
+	}
+
+#login_register .results, #add_event_exp .results
+{
+	color: red;
+}
+
+#login_register .register > span.dont_have, #login_register .login span.already_have
+{
+	color: #CCC;
+}
+
+#login_register .register > span.register_now, #add_event_exp .register > span.register_now, #login_register .login span.login_now, #add_event_exp .sign_up span.login_now
+{
+	color:white;
+	text-decoration: underline;}
+
+#login_from_register > span
+{
+	color:#CCC;
+}
+
+.login > hr
+{
+	width: 100%;
+	border: none;
+	height: 1px;
+	background-color: #999;
+	margin-top: 14px;
+}
+
+.login > span, .sign_up > span{ display: block;}
+/*.sign_up > span{ margin-bottom: 20px }*/
+.login > form, .sign_up > form{ margin-top:30px;}
+.login > form > .prompt, .sign_up > form > .prompt{ margin-bottom: 10px }
+.login > a.fb-login, .sign_up > a.fb-login{ text-decoration: none }
+.login > form > input, .sign_up > form > input{
+	text-indent: 10px;
+	outline:none;
+	font-weight: 200;
+font-size: 12px;
+font-family: Helvetica, Arial, sans-serif;
+
+width: 100%;
+height: 29px;
+background-color: #CCC;
+border: none;
+margin-bottom:15px;
+	}
+
+
+
+.login > form > button, .sign_up > form > button{
+	margin-top: 6px;
+	
+	height:30px;
+	width:110px;
+	font-weight:bold;
+	color:white;
+	border:1px solid #999999;
+	top: 331px;
+	cursor:pointer;
+	background: #999999; /* Old browsers */
+background: #45484d; /* Old browsers */
+background: -moz-linear-gradient(top,  #45484d 0%, #000000 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #45484d 0%,#000000 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%); /* IE10+ */
+background: linear-gradient(top,  #45484d 0%,#000000 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+
+	}
+
+#login_register .login #pass_forgotten, #add_event_exp .login #pass_forgotten{
+	font-size: 12px;
+	color: #CCC;
+	font-family: Helvetica, Arial, sans-serif;
+
+	}
+
+#login_from_register{
+cursor: pointer;
+}
+
+input[type=checkbox] {
+	visibility: hidden;
+}
+
+/* Facebook Login */
+button.fb-login-button,
+button.fb-signup-button{
+	border-style: none;
+	color: #FFFFFF;
+	font-family: 'Open Sans',sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	height: 40px;
+	padding: 0 0 2px;
+	position: relative;
+	/*width: 250px;*/
+	width: 100%;
+	background-color: #3B5998;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*button.fb-login-button.long,
+button.fb-signup-button.long{ width: 312px };*/
+
+/*#landing-signup .header button.fb-signup-button {
+	padding-left: 20px;
+}*/
+
+button.fb-login-button:hover,
+button.fb-signup-button:hover {
+	background: #4E6CAB;
+}
+
+button.fb-login-button .icon,
+button.fb-signup-button .icon {
+	background-position: right center;
+	background-repeat: no-repeat;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 26px;
+}
+
+button.fb-login-button .icon,
+button.fb-signup-button .icon {
+	background-image: url(../icons/fb.png);
+}
+
+
+
+/* SQUARED THREE 
+.squaredThree {
+	margin-left: 2px;
+	margin-top: 20px;
+	position: relative;
+}
+
+.squaredThree label {
+	margin-left: -22px;
+	cursor: pointer;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 0;
+
+	-webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
+	-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
+
+	
+	background: white;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#45484d',GradientType=0 );
+}
+
+.squaredThree label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 9px;
+	height: 5px;
+	background: transparent;
+	top: 4px;
+	left: 4px;
+	border: 3px solid black;
+	border-top: none;
+	border-right: none;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.squaredThree label:hover::after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+	opacity: 0.3;
+}
+
+.squaredThree input[type=checkbox]:checked + label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+}
+
+.squaredThree > span
+{
+	margin-left: 10px;
+	font-size: 13px;
+}
+
+*/
+
+
+
+
+
+/* CSS Created by CSS CHECKBOX */
+/**********************************/
+/**** www.CSScheckbox.com *********/
+
+/*general styles for all CSS Checkboxes*/
+label {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+input[type=checkbox].css-checkbox {
+	  position: absolute; 
+    overflow: hidden; 
+    clip: rect(0 0 0 0); 
+    height:1px; 
+    width:1px; 
+    margin:-1px; 
+    padding:0;
+    border:0;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+	padding-left:20px;
+	height:15px; 
+	display:inline-block;
+	line-height:15px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size:15px;
+	vertical-align:middle;
+	cursor:pointer;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+	background-position: 0 -15px;
+}
+
+.css-label{
+	background-image:url(http://csscheckbox.com/checkboxes/dark-check-green.png);
+}
+
+/*specific classes related to Checkbox skins*/
+
+.lite-green-check{background-image:url(http://csscheckbox.com/checkboxes/lite-green-check.png);}
+.lite-blue-check{background-image:url(http://csscheckbox.com/checkboxes/lite-blue-check.png);}
+.lite-gray-check{background-image:url(http://csscheckbox.com/checkboxes/lite-gray-check.png);}
+.lite-cyan-check{background-image:url(http://csscheckbox.com/checkboxes/lite-cyan-check.png);}
+.lite-orange-check{background-image:url(http://csscheckbox.com/checkboxes/lite-orange-check.png);}
+.lite-red-check{background-image:url(http://csscheckbox.com/checkboxes/lite-red-check.png);}
+
+.lite-x-cyan{background-image:url(http://csscheckbox.com/checkboxes/lite-x-cyan.png);}
+.lite-x-gray{background-image:url(http://csscheckbox.com/checkboxes/lite-x-gray.png);}
+.lite-x-blue{background-image:url(http://csscheckbox.com/checkboxes/lite-x-blue.png);}
+.lite-x-orange{background-image:url(http://csscheckbox.com/checkboxes/lite-x-orange.png);}
+.lite-x-red{background-image:url(http://csscheckbox.com/checkboxes/lite-x-red.png);}
+.lite-x-green{background-image:url(http://csscheckbox.com/checkboxes/lite-x-green.png);}
+
+.mac-style{background-image:url(http://csscheckbox.com/checkboxes/mac-style.png);}
+.mario-style{background-image:url(http://csscheckbox.com/checkboxes/mario-style.png);}
+.alert-style{background-image:url(http://csscheckbox.com/checkboxes/alert-style.png);}
+.lite-plus{background-image:url(http://csscheckbox.com/checkboxes/lite-plus.png);}
+.dark-plus{background-image:url(http://csscheckbox.com/checkboxes/dark-plus.png);}
+.dark-plus-cyan{background-image:url(http://csscheckbox.com/checkboxes/dark-plus-cyan.png);}
+.dark-plus-orange{background-image:url(http://csscheckbox.com/checkboxes/dark-plus-orange.png);}
+.dark-check-cyan{background-image:url(http://csscheckbox.com/checkboxes/dark-check-cyan.png);}
+.dark-check-green{background-image:url(http://csscheckbox.com/checkboxes/dark-check-green.png);}
+.dark-check-orange{background-image:url(http://csscheckbox.com/checkboxes/dark-check-orange.png);}
+
+
+.depressed-lite-small{background-image:url(http://csscheckbox.com/checkboxes/depressed-lite-small.png);}
+.elegant{background-image:url(http://csscheckbox.com/checkboxes/elegant.png);}
+.depressed{background-image:url(http://csscheckbox.com/checkboxes/depressed.png);}
+.chrome-style{background-image:url(http://csscheckbox.com/checkboxes/chrome-style.png);}
+.web-two-style{background-image:url(http://csscheckbox.com/checkboxes/web-two-style.png);}
+.vlad{background-image:url(http://csscheckbox.com/checkboxes/vlad.png);}
+.klaus{background-image:url(http://csscheckbox.com/checkboxes/klaus.png);}
+
+input[type=checkbox].css-checkbox.med + label.css-label.med {
+	padding-left:22px;
+    height:17px; 
+	display:inline-block;
+	line-height:17px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size:15px;
+	vertical-align:middle;
+    cursor:pointer;
+}
+
+input[type=checkbox].css-checkbox.med:checked + label.css-label.med {
+
+    background-position: 0 -17px;
+}
+input[type=checkbox].css-checkbox.sme + label.css-label.sme {
+	padding-left:22px;
+    height:16px; 
+	display:inline-block;
+	line-height:16px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size:15px;
+	vertical-align:middle;
+    cursor:pointer;
+}
+
+input[type=checkbox].css-checkbox.sme:checked + label.css-label.sme{
+
+    background-position: 0 -16px;
+}
+input[type=checkbox].css-checkbox.lrg + label.css-label.lrg {
+	padding-left:22px;
+    height:20px; 
+	display:inline-block;
+	line-height:20px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size:13px;
+	vertical-align:middle;
+    cursor:pointer;
+}
+
+input[type=checkbox].css-checkbox.lrg:checked + label.css-label.lrg{
+
+    background-position: 0 -20px;
+}
+
+
+.keep_login
+{
+	margin-top: 20px;
+}
+
+
+
+#sd_social_fb img, #sd_social_twitter img 
+{
+	display: inline;
+	float: left;
+	margin-right: 6px;
+	
+}
+
+#sd_social
+{
+	font-size: 13px;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #CCCCCC;
+	cursor: pointer;
+}
+
+#sd_social_twitter 
+{
+	margin-top: 7px;
+	display: inline;
+}
+ #feedback
+ {
+ 	font-size: 13px;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #CCCCCC;
+ }
+
+ .about_content
+ {
+ 	font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+ }
+.about_content strong#link_to_add_event
+{
+	cursor: pointer;
+	text-decoration: underline;
+} 
+
+ .about_content a, .about_content strong
+ {
+ 	color:#ed1c24;
+ }
+ 
+ .about_content > .statement{ font-size: 15px; line-height: 20px }
+ .about_content > .footnote{position: relative; bottom: 0px; font-size: 13px; color: rgb(211,211,211)}
+
+ .about_content > .team{ width: 100%; height: 200px }
+ .about_content > .team > h3{ font-size: 30px; margin-bottom: 20px }
+ .about_content > .team > h3 > span{ font-size: 15px; color: rgb(211,211,211); font-weight: 100; margin-left: 5px;}
+ 
+ .about_content > .team > .member{
+     width: 100px;
+     float: left;
+     margin-right: 20px;
+ }
+ 
+ .about_content > .team > .member > .member_thumb{ 
+     width: 100px; 
+     height: 100px; 
+     background-repeat: no-repeat; 
+     background-position: 50%; 
+     background-size: cover;
+     border-radius: 50px;
+     -moz-border-radius: 50px;
+     border: 2px solid #ED1C24;
+     margin-bottom: 10px;
+}
+
+ .about_content > .team > .member.leniw > .member_thumb{ background-image: url("../static/img/leniw.jpg")}
+ .about_content > .team > .member.sotiris > .member_thumb{ background-image: url("../static/img/sotiris.jpg")}
+ .about_content > .team > .member.chris > .member_thumb{ background-image: url("../static/img/chris.jpg")}
+ .about_content > .team > .member.nick > .member_thumb{ background-image: url("../static/img/nick.jpg")}
+ .about_content > .team > .member.nick{ margin-right: 0 }
+ 
+ .about_content > .team > .member > .member_name{ font-size: 20px; text-align: center }
+ .about_content > .team > .member > .member_email{ font-size: 12px; text-align: center; color: rgb(211,211,211) }
+ 
+ 

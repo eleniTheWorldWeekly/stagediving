@@ -1,0 +1,1036 @@
+var right_width;
+var video_columns;
+var image_columns;
+var geocoder;
+var map;
+var infowindow = new google.maps.InfoWindow();
+var marker;
+var image= "/static/icons/pin-on-google-map.png";;
+var json;
+var map_open;     //map_open=0 xarths kleistos
+var nArtists=1;         //plhthos kallitexnvn pou summetexoun sthn sugkekrimenh sunaulia
+
+
+
+//http://stagediving.gr/event/?event_id=18
+
+
+function initialize_poster_view()
+{
+
+
+
+
+  
+  
+
+ 
+  $(window).scroll(function(){ // scroll event  
+ 	//$('#poster_view_body').css('top',$(window).scrollTop()+$(window).height()+"px");
+   
+ 
+  });
+
+
+
+//poster view responsive
+var window_width=$("#poster_view_body").width();
+/*$("#poster_view_body > #poster_view").css("width",window_width*0.8);
+$("#poster_view_body > #poster_view > #header").css("width",window_width*0.8);
+$("#poster_view_body > #poster_view").css("margin-left",window_width*0.2/2);
+$("#poster_view_body > #poster_view > #main > #left").css("width",(window_width*0.8*0.5)-10);
+$("#poster_view_body > #poster_view > #main > #right").css("width",(window_width*0.8*0.5)-10);
+right_width=(window_width*0.8*0.5)-10;
+*/
+$("#poster_view_body > #poster_view").css("width",window_width-80);
+$("#poster_view_body > #poster_view > #header").css("width",window_width-80);
+$("#poster_view_body > #poster_view").css("margin-left",40);
+$("#poster_view_body > #poster_view > #main > #left").css("width",((window_width-80)*0.5)-10);
+$("#poster_view_body > #poster_view > #main > #right").css("width",((window_width-80)*0.5)-10);
+right_width=((window_width-80)*0.5)-10;
+//video responsive
+if(right_width>=490)
+{
+  video_columns=2;
+
+}
+else
+{
+  video_columns=1;
+}
+//console.log(right_width,"number of columns",video_columns);
+
+
+
+//emfanizei ston xrhsth ton xarth me thn topothesia tou venue ustera apo epilogh tou xrhsth
+    $(".map_open").unbind("click").click(function(event){
+      //console.log(map_open);
+  
+      event.stopPropagation();
+      if(map_open==0)
+      {
+        $(".map_canvas").height(324);
+        $("#map_icon").next().html("Close Map");
+        map_open=1;
+        
+      }
+      else{
+          $(".map_canvas").height(0);
+          $("#map_icon").next().html("Show Map");
+          map_open=0;
+          }
+    });
+
+//kleinontas o xrhsth to parathiro epistrefei sthn kentrikh selida
+$("#close_poster_view").click(function(){
+
+  $("html").removeClass("poster_view");
+  $("html").removeClass("poster_view_via_share ");
+  $("#poster_view_body").removeClass("by_search");
+  $("#poster_view_body").removeClass("by_my_concerts");
+
+	$("#poster_view #header").css("position","relative");
+     	$("#poster_view #main #left").css("position","relative");
+     	$("#poster_view_body").animate({"top":$(window).height()},"slow",function(){
+		$("#poster_view_body").css("visibility","hidden");
+	     	document.body.style.overflow = "auto";
+		$("#background_slider").css({
+		"opacity": "0",
+		"visibility": "hidden",
+		"z-index":"-1"
+	     	});
+	});
+
+  ///adeiasma koutiwn youtube
+  $("#poster_view_body .video_box").each(function(){
+      var wanted_id=$(this).children().attr("id");
+      var wanted_style=$(this).children().attr("style");
+      $(this).html("<div id="+wanted_id+" style="+wanted_style+"></div>")
+
+
+  })
+document.body.style.overflow = "scroll";
+$("body").css("height","auto");
+     
+});
+
+
+//go to next poster
+$("#poster_view #right_anchor").unbind("click").click(function(e){
+  
+  e.stopPropagation();
+  //check if the poster view came from the search by artist
+  if($("#poster_view_body").hasClass("by_search"))
+  {
+    var next_id_search_concert=-1;
+    //briskw sto search to item ths sygkekrimenhs synaylias, wste na parw to id ths epomenhs
+    $("#search_by-artist > .search_content  > .item > .search_event_id").each(function(){
+      
+      if( $(this).val() ===  $(".poster_view_event_id").val())
+      {
+        //console.log($(this).val());
+        //console.log($(this).parent().next().find(".search_event_id").val());
+        next_id_search_concert=parseInt($(this).parent().next().find(".search_event_id").val());
+      }
+    })
+
+    //psaxnw sto json na brw to object me to sygkekrimeno id
+    var i=0;
+        $.each(JSONsearch_results.events, function(){
+            if((next_id_search_concert==JSONsearch_results.events[i]["Id"]) && next_id_search_concert!=-1)
+            {
+                
+               
+               // console.log(JSONsearch_results.events[i]["Id"]);
+                populate_poster_view_via_search(JSONsearch_results.events[i]);
+            }
+            i++;
+        });
+  }
+//pernw to epomeno apo ta my_concerts
+  else if ($("#poster_view_body").hasClass("by_my_concerts"))
+  {
+    var i=0;
+    $.each(users_json, function(){
+      if((users_json[i]["pk"] == $(".poster_view_event_id").val()) && (i<users_json.length-1))
+      {
+        $.ajax({
+          type: "GET",
+          url: "/event/?event_id="+users_json[i+1]["pk"],
+          success:function(data){
+            //console.log(data.events[0]);    
+            populate_poster_view_via_search(data.events[0]);  
+
+          }
+        })
+      }
+      i++;
+    });
+
+  }
+  //pernw to epomeno apo ton toixo
+  else
+  {
+  var poster_view_wall_id=parseInt($("#poster_view > .poster_view_wall_id").val());
+  
+     if(poster_view_wall_id!= totalNumberOfConcerts)
+     {
+      $(".posterWall").each(function(){
+
+        
+        if(parseInt($(this).find(".wall_id").val()) == poster_view_wall_id+1)
+        {
+          
+          populate_poster_view($(this));
+          return;
+        }
+      })
+     }
+    }
+   
+    });
+
+
+
+//go to previous poster
+$("#poster_view #left_anchor").unbind("click").click(function(e){
+
+e.stopPropagation();
+  //check if the poster view came from the search by artist
+  if($("#poster_view_body").hasClass("by_search"))
+  {
+    var prev_id_search_concert=-1;
+    //briskw sto search to item ths sygkekrimenhs synaylias, wste na parw to id ths epomenhs
+    $("#search_by-artist > .search_content  > .item > .search_event_id").each(function(){
+      
+      if( $(this).val() === $(".poster_view_event_id").val() )
+      {
+        //console.log($(this).val());
+       // console.log($(this).parent().prev().find(".search_event_id").val());
+        prev_id_search_concert=parseInt($(this).parent().prev().find(".search_event_id").val());
+      }
+    })
+
+    //psaxnw sto json na brw to object me to sygkekrimeno id
+    var i=0;
+        $.each(JSONsearch_results.events, function(){
+            if((prev_id_search_concert==JSONsearch_results.events[i]["Id"]) && prev_id_search_concert!=-1)
+            {
+                
+               
+                //console.log(JSONsearch_results.events[i]["Id"]);
+                populate_poster_view_via_search(JSONsearch_results.events[i]);
+            }
+            i++;
+        });
+  }
+
+  else if ($("#poster_view_body").hasClass("by_my_concerts"))
+  {
+    var i=0;
+    $.each(users_json, function(){
+      if((users_json[i]["pk"] == $(".poster_view_event_id").val()) && (i!=0))
+      {
+        $.ajax({
+          type: "GET",
+          url: "/event/?event_id="+users_json[i-1]["pk"],
+          success:function(data){
+            //console.log(data.events[0]);    
+            populate_poster_view_via_search(data.events[0]);  
+
+          }
+        })
+      }
+      i++;
+    });
+
+  }
+
+  else
+  {
+
+
+  var poster_view_wall_id=parseInt($("#poster_view > .poster_view_wall_id").val());
+     if(poster_view_wall_id!= 0)
+     {
+      $(".posterWall").each(function(){
+
+        if(parseInt($(this).find(".wall_id").val()) == poster_view_wall_id-1)
+        {
+          populate_poster_view($(this));
+          return;
+        }
+      })
+     }
+
+    }
+   
+    });
+
+
+
+/* facebook */
+  $("#poster_view #facebook").click(function(event) {
+        event.stopPropagation();
+  	fbshare($(this).parent().parent().parent().parent().find(".poster_view_event_id").val(),$(this).parent().parent().find(".artists div").html(),$(this).parent().parent().find(".date").html(),$(this).parent().parent().parent().parent().find(".venue_name").html(),  $(this).parent().parent().parent().find("#venue_city").html(), $(this).parent().parent().parent().find("#left").find("#poster").attr("src"));
+	return false;
+    });
+
+
+
+
+/* tweet */
+  $("#poster_view #twitter").click(function(event) {
+         event.stopPropagation();
+  var twitter_text=""+$(this).parent().parent().find(".artists div").html()+ " "+$(this).parent().parent().find(".date").html()+" *"+$(this).parent().parent().parent().parent().find(".venue_name").html()+ "* "+ $(this).parent().parent().parent().find("#venue_city").html();
+  twshare($(this).parent().parent().parent().parent().find(".poster_view_event_id").val(),twitter_text);
+    return false;
+    });
+
+
+
+/* google */
+  $("#poster_view #google").click(function(event) {
+        event.stopPropagation();
+  gooshare($(this).parent().parent().parent().parent().find(".poster_view_event_id").val(),$(this).parent().parent().find(".artists div").html()+"@"+$(this).parent().parent().parent().parent().find(".venue_name").html());
+
+    return false;
+    });
+
+
+
+
+}
+
+
+function poster_view_resize2()
+{
+  //poster view responsive
+  var window_width=$("#poster_view_body").width();
+  $("#poster_view_body > #poster_view").css("width",window_width*0.8);
+  $("#poster_view_body > #poster_view > #header").css("width",window_width*0.8);
+  $("#poster_view_body > #poster_view").css("margin-left",window_width*0.2/2);
+  $("#poster_view_body > #poster_view > #main > #left").css("width",(window_width*0.8*0.5)-10);
+  $("#poster_view_body > #poster_view > #main > #right").css("width",(window_width*0.8*0.5)-10);
+  right_width=(window_width*0.8*0.5)-10;
+
+
+  //video responsive
+  if(right_width>=490)
+  {
+    video_columns=2;
+
+  }
+  else
+  {
+    video_columns=1;
+  }
+  //console.log(right_width,"number of columns",video_columns);
+
+}
+
+/*
+function poster_view_resize()
+{
+
+  $("#poster_view_body #poster_view #main #left #poster").one('load',function() {
+        console.log($("#poster_view_body #poster_view #main #left #poster").height());
+        $("#poster_view_body #poster_view #main #left").sticky({topSpacing:-($("#poster_view_body #poster_view #main #left #poster").height()-($(window).height()-95) )});
+       
+
+});
+
+  //poster view responsive
+window_width=$("#poster_view_body").width();
+$("#poster_view_body #poster_view").css("width",window_width*0.8);
+$("#poster_view_body #poster_view #header").css("width",window_width*0.8);
+$("#poster_view_body #poster_view").css("margin-left",window_width*0.2/2);
+$("#poster_view_body #poster_view #main #left").css("width",(window_width*0.8*0.5)-10);
+$("#poster_view_body #poster_view #main #right").css("width",(window_width*0.8*0.5)-10);
+right_width=(window_width*0.8*0.5)-10;
+
+console.log("on resize right_width",right_width);
+
+
+//images responsive
+
+if(right_width<440)
+        {
+          image_columns=2;
+          $(".images").css("height","276px");
+        }
+        else
+        {
+          image_columns=3;
+          $(".images").css("height","184px");
+        }
+
+
+var nArt=1;
+$('#poster_view_body #poster_view #main #right .artists div').each(function(index) {
+  $("#art"+nArt+" > .images").html("");
+  make_image_grid(nArt);
+        $.ajax({
+                url: "http://ws.audioscrobbler.com/2.0/?method=artist.getimages&artist="+
+                $(this).html()+"&api_key=75904470b83768ccf1292302837281c3&format=json",
+                dataType: 'json',
+                async: false,
+                success: function(jsonLastfm){
+                  src=new Array();
+                  $.each(jsonLastfm.images.image, function(index,elem){
+                    src[index]=elem.sizes.size[2]["#text"];
+                  });
+                }
+                });
+        src=src.splice(0, 6);
+        putArtistImages(src,nArt);
+        nArt++;
+
+});
+        
+
+        
+console.log("image colms",image_columns);
+
+
+
+//video responsive
+if(right_width>=490)
+{
+  video_columns=2;
+
+}
+else
+{
+  video_columns=1;
+}
+console.log(right_width,"number of columns",video_columns);
+for(i=1; i<nArtists; i++)
+{
+  make_video_grid(nArtists);
+}
+
+
+
+console.log("number of columns",video_columns);
+}
+
+*/
+function show_poster_view()
+{
+
+
+  $('body,html').scrollTop(0);
+ 
+  $("html").addClass("poster_view");
+	$("#background_slider").css({
+        "opacity": "1",
+        "visibility": "visible",
+        "z-index":"300"
+    	});
+  
+  $("#poster_view_body").css("visibility","visible");
+          $("#poster_view_body").animate({"top": "45px"},"slow",function(){
+          $("#poster_view #header").css("position","relative");
+          $("#poster_view #main #left").css("position","relative");
+
+  });
+  document.body.style.overflow = "auto";
+  
+}
+
+function populate_poster_view(object)
+{
+
+
+//google analytics
+//_gaq.push(['_trackEvent', 'Event', 'View']); 
+ga('send', 'event', 'Event', 'View');
+
+$("#poster_view .poster_view_wall_id ").val(object.find(".wall_id").val());
+$("#poster_view .poster_view_event_id ").val(object.find(".eventID").val());
+$(".map_canvas").height(0);
+$("#map_icon").next().html("Show Map");
+map_open=0;
+nArtists=1;
+$("#poster_view > #main > #right > .artists_details").html(" ");
+	$("#poster_view > #main > #right > #event_poster").html(object.find("img").attr("src"));
+	$("#poster_view > #main > #right > .date").html(object.find(".thumb_date").html());
+	$("#poster_view > #main > #right > .artists").html("");
+	object.find(".artist").each(function() {
+	     var artist_1=removePunctuation($(this).val());
+	     $("#poster_view > #main > #right > .artists").append("<div>"+artist_1+"</div>");
+
+	});
+	
+	$("#poster_view > #main > #right >  #poster_view_main_info > #town_info_small > #poster_view_town").html(object.find(".thumb_town").html());
+	$("#poster_view > #main > #right > #poster_view_main_info > #time_info_small > #poster_view_time").html(object.find(".thumb_time").html());
+	$("#poster_view > #main > #right > #poster_view_main_info > #venue_info_small > #poster_view_venue").html(object.find(".thumb_venue").html());
+	$("#poster_view > #main > #right > #poster_view_main_info > #entrance_info_small > #poster_view_entrance").html(object.find(".thumb_entrance").html());
+  $("#poster_view > #main > #right > #poster_view_main_info > #description_info_small > #poster_view_description").html("</br>"+object.find(".event_description").val());
+	$("#poster_view > #main > #right > #attend > #attend_number").html(object.find(".attend_number").html());
+  var venue_1=removePunctuation(object.find(".thumb_venue").html());
+	$("#poster_view > #main > #right > #venue_info > .venue_name").html(venue_1);
+	$("#poster_view > #main > #right > #venue_info > #venue_address").html(object.find(".venue_address").val());
+	$("#poster_view > #main > #right > #venue_info > #venue_city").html(object.find(".thumb_town").html());
+	$("#poster_view > #main > #right > #venue_info > #venue_country").html(object.find(".venue_country").val());
+
+
+
+
+//make the map   codeAddress(json.event["venue"]["venueAddr"],json.event["venue"]["venueCity"],json.event["venue"]["venueCountry"]);
+var address="";
+address=$("#poster_view  #main  #right  #venue_info  #venue_address").html()+","+$("#poster_view  #main  #right  #venue_info #venue_city").html()+" "+$("#poster_view  #main  #right  #venue_info  #venue_country").html();
+
+codeAddress(address);
+
+
+
+//add poster
+var poster_url="";
+poster_url=$("#poster_view  #main  #right #event_poster").html();
+//$("#poster_view #main #left #poster").css("background-image","url(/static/"+poster_url+")");
+$("#poster_view #main #left #poster").attr("src",""+poster_url+"");
+
+
+  
+$("#poster_view #main #left #poster").one('load',function() {
+
+    if($("#poster_view #main #left #poster").height()+140 > $(window).height())
+    {
+      var analogy=$("#poster_view #main #left #poster").height()/$("#poster_view #main #left #poster").width();
+      var new_height=$(window).height()-145;
+      var new_width=new_height/analogy;
+      //console.log($("#poster_view #main #left #poster").height(),new_height);
+      $("#poster_view #main #left #poster").css("height", new_height+"px");
+      $("#poster_view #main #left #poster").css("width", new_width+"px");
+      //$("#poster_view #main #left ").css("top", "140px");
+     // console.log("poster bigger");
+    }
+    else
+    {
+      $("#poster_view #main #left #poster").css("width", "100%");
+      $("#poster_view #main #left #poster").css("height", "auto");
+    }
+
+    });
+
+
+
+
+
+
+
+//artist info
+
+
+$('.artists div').each(function(index) {
+
+       $.ajax({
+          url: "/event/events/ajax/list/artist/",
+          type: "GET",
+          dataType: "jsonp",
+          data: {name_startsWith: $(this).html()},
+    //artist fields : name, bio, images("url,url,..."), videos ("url,url,...")
+    //epistrefei ola ta pedia apothikeuei h ananewnei thn eggrafh tou artist
+    // GET /artist?query=blablabla epistrefei mono ta pedia name,bio,images,videos
+          success: function( data ) {
+
+            //console.log(data,data[0].fields.name);
+            complete_artists_info(data);
+            
+          }
+        
+    });
+});
+
+//console.log("nArtists-1",nArtists-1);
+
+
+
+
+
+
+}
+
+
+function populate_poster_view_via_search(element)
+{
+
+  //google analytics
+
+  ga('send', 'event', 'Event', 'View');
+  //console.log(element);
+  $("#poster_view .poster_view_wall_id ").val("-1");
+  $("#poster_view .poster_view_event_id ").val(element["Id"]);
+$(".map_canvas").height(0);
+$("#map_icon").next().html("Show Map");
+map_open=0;
+nArtists=1;
+var date="";
+date=parseDate(element["Date"]).toString();
+//date2=$.datepicker.parseDate('dd-mm-yy', ((data.events[lastIdConcert]["Date"]).toString()));
+
+var tmp = date.split(" ");
+
+var date=tmp[0];
+var month=convertToIntMonth(tmp[1]);
+var number=tmp[2];
+var year= tmp[3];
+$("#poster_view > #main > #right > .artists_details").html(" ");
+  $("#poster_view > #main > #right > #event_poster").html("/static/"+element["Poster"]);
+  $("#poster_view > #main > #right > .date").html(date+" " + number +" / "+ month+" / "+ year);
+  $("#poster_view > #main > #right > .artists").html("");
+  for(k=0;k<element["artists"].length;k++)
+  {
+    $("#poster_view > #main > #right > .artists").append("<div>"+element["artists"][k]["artist"]+"</div>");
+    
+  }
+  
+  
+  $("#poster_view > #main > #right >  #poster_view_main_info > #town_info_small > #poster_view_town").html(element["venue"]["venueCity"]);
+  $("#poster_view > #main > #right > #poster_view_main_info > #time_info_small > #poster_view_time").html(element["Time"]);
+  $("#poster_view > #main > #right > #poster_view_main_info > #venue_info_small > #poster_view_venue").html(element["venue"]["venueName"]);
+  $("#poster_view > #main > #right > #poster_view_main_info > #entrance_info_small > #poster_view_entrance").html(element["Price"]);
+  $("#poster_view > #main > #right > #attend > #attend_number").html(element["Attends"]);
+  var venue_1=removePunctuation(element["venue"]["venueName"]);
+  $("#poster_view > #main > #right > #venue_info > .venue_name").html(venue_1);
+  $("#poster_view > #main > #right > #venue_info > #venue_address").html(element["venue"]["venueAddr"]);
+  $("#poster_view > #main > #right > #venue_info > #venue_city").html(element["venue"]["venueCity"]);
+  $("#poster_view > #main > #right > #venue_info > #venue_country").html("Greece");
+
+
+
+
+//make the map   codeAddress(json.event["venue"]["venueAddr"],json.event["venue"]["venueCity"],json.event["venue"]["venueCountry"]);
+var address="";
+address=$("#poster_view  #main  #right  #venue_info  #venue_address").html()+","+$("#poster_view  #main  #right  #venue_info #venue_city").html()+" "+$("#poster_view  #main  #right  #venue_info  #venue_country").html();
+
+codeAddress(address);
+
+
+
+//add poster
+var poster_url="";
+poster_url=$("#poster_view  #main  #right #event_poster").html();
+//$("#poster_view #main #left #poster").css("background-image","url(/static/"+poster_url+")");
+$("#poster_view #main #left #poster").attr("src",""+poster_url+"");
+
+
+  
+$("#poster_view #main #left #poster").one('load',function() {
+
+    if($("#poster_view #main #left #poster").height()+140 > $(window).height())
+    {
+      var analogy=$("#poster_view #main #left #poster").height()/$("#poster_view #main #left #poster").width();
+      var new_height=$(window).height()-145;
+      var new_width=new_height/analogy;
+      //console.log($("#poster_view #main #left #poster").height(),new_height);
+      $("#poster_view #main #left #poster").css("height", new_height+"px");
+      $("#poster_view #main #left #poster").css("width", new_width+"px");
+      //$("#poster_view #main #left ").css("top", "140px");
+      //console.log("poster bigger");
+    }
+    else
+    {
+      $("#poster_view #main #left #poster").css("width", "100%");
+      $("#poster_view #main #left #poster").css("height", "auto");
+    }
+
+    });
+
+
+
+
+
+
+
+//artist info
+
+
+
+
+  $('.artists div').each(function(index) {
+
+       $.ajax({
+          url: "/event/events/ajax/list/artist/",
+          type: "GET",
+          dataType: "jsonp",
+          data: {name_startsWith: $(this).html()},
+    //artist fields : name, bio, images("url,url,..."), videos ("url,url,...")
+    //epistrefei ola ta pedia apothikeuei h ananewnei thn eggrafh tou artist
+    // GET /artist?query=blablabla epistrefei mono ta pedia name,bio,images,videos
+          success: function( data ) {
+
+            //console.log(data,data[0].fields.name);
+            complete_artists_info(data);
+            
+          }
+        
+    });
+  });
+ 
+
+
+
+
+
+}
+
+
+
+function make_image_grid(nArtists,data)
+{
+  var image_col_width;
+  var min_image_col_width=160;//140 + 20px margin
+  var image_columns=parseInt(right_width/min_image_col_width);
+  if(image_columns==2 || image_columns==1)
+  {
+    //$("#art"+nArtists+" > .images").css("height","276px");
+    image_col_width=((right_width-20)/2)-1;
+    image_columns=2;
+  }
+  else if(image_columns==3)
+  {
+    //$("#art"+nArtists+" > .images").css("height","184px");
+    image_col_width=((right_width-40)/3)-1;
+  }
+
+    for(i=1; i<=image_columns; i++)
+    {
+      $("#art"+nArtists+" > .images").append("<div class='image_col' id='image_col"+i+"' style='width:"+image_col_width+"px;'></div>");
+    }
+
+  
+
+   for(i=1; i<=image_columns; i++)
+    {
+      if(i!=image_columns)
+      {
+        $("#art"+nArtists+" > .images > #image_col"+i).css("margin-right","20px");
+      }
+    //$("#image_col"+i).css("margin-right",""+image_col_margin_right+"px");
+    for(j=1; j<=6/image_columns; j++)
+    {
+       var div=jQuery('<div/>', {
+        id:nArtists+'img'+i*j
+        }).addClass("image").css("width",image_col_width).css("height",image_col_width/1.5).appendTo("#art"+nArtists+" > .images > #image_col"+i);
+
+
+    }
+  }
+
+
+    putArtistImages(data,nArtists);
+
+}
+
+
+function codeAddress(addr,city,country) {
+
+  var blackAndWhiteStyles = [
+  {
+    stylers: [
+      { saturation: -99 },
+      { hue: "#6600ff" },
+      { lightness: -43 }
+    ]
+  }
+];
+
+  // Create a new StyledMapType object, passing it the array of styles,
+  // as well as the name to be displayed on the map type control.
+  var blackAndWhiteType = new google.maps.StyledMapType(blackAndWhiteStyles,
+    {name: "Stage Diving"});
+
+  // Create a map object, and include the MapTypeId to add
+  // to the map type control.
+  var mapOptions = {
+    zoom: 15,
+    center: new google.maps.LatLng(-34.397, 150.644),
+    mapTypeControlOptions: {
+      mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'black_white']
+    }
+  };
+  
+  map = new google.maps.Map(document.getElementById('map_canvas'),
+    mapOptions);
+
+  //Associate the styled map with the MapTypeId and set it to display.
+  map.mapTypes.set('black_white', blackAndWhiteType);
+  map.setMapTypeId('black_white');
+
+
+
+
+    var address=addr+" ,"+city + " "+country;
+    geocoder = new google.maps.Geocoder();
+    geocoder.geocode( { 'address': address}, function(results, status) {
+
+      if (status == google.maps.GeocoderStatus.OK) {
+
+        map.setCenter(results[0].geometry.location);
+        marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location,
+            title: 'Venue',
+            clickable: false,
+            icon: image
+        });
+      } else {
+       // console.log("Geocode was not successful for the following reason: " + status);
+      }
+    });
+
+   return true;
+
+
+
+  }
+
+
+function make_video_grid(nArtists,data)
+{
+  $("#art"+nArtists+" > .videos").html( "<div class='video_box' style='float:left;'><div id='"+nArtists+"vid1' ></div></div><div class='video_box' style='float:right;'><div id='"+nArtists+"vid2' ></div></div><div class='video_box' style='float:left;'><div  id='"+nArtists+"vid3'></div></div><div class='video_box' style='float:right;'><div  id='"+nArtists+"vid4' ></div></div>");
+
+  getArtistVideo(data,nArtists);
+        
+        //artist responsive
+        if(video_columns==1)
+        {
+         //edw kathorizw to platos toy ekswterikou koutiou kai pio katw otan fortvsei to video
+         // loadVideo kathorizw k to platow toy video
+          $(".video_box").css("width",right_width-2);
+          $(".video_box").css("height",(right_width-2)/1.5);
+          for(j=1; j<=nArtists; j++)
+          {
+            $("#"+j+"vid1").css("width",right_width-2);
+            $("#"+j+"vid2").css("width",right_width-2);
+            $("#"+j+"vid3").css("width",right_width-2);
+            $("#"+j+"vid4").css("width",right_width-2);
+            $("#"+j+"vid1").css("height",(right_width-2)/1.5);
+            $("#"+j+"vid2").css("height",(right_width-2)/1.5);
+            $("#"+j+"vid3").css("height",(right_width-2)/1.5);
+            $("#"+j+"vid4").css("height",(right_width-2)/1.5);
+          }
+    
+  
+        }
+        
+        else if(video_columns==2)
+        {
+         for(j=1; j<=nArtists; j++)
+          {
+            video_width=(right_width-20)/2;
+            $("#"+j+"vid1").css("width",video_width);
+            $("#"+j+"vid2").css("width",video_width);
+            $("#"+j+"vid3").css("width",video_width);
+            $("#"+j+"vid4").css("width",video_width);
+            $("#"+j+"vid1").css("height",video_width/1.5);
+            $("#"+j+"vid2").css("height",video_width/1.5);
+            $("#"+j+"vid3").css("height",video_width/1.5);
+            $("#"+j+"vid4").css("height",video_width/1.5);
+
+            $("#art"+j+"> .videos > .video_box").each(function(index){
+              $(this).css("width",video_width+1);
+             $(this).css("height",(video_width/1.5)+1);
+              /*if(index==0 || index==1)
+              {
+              var video_box_margin_buttom=right_width-470;
+                $(this).css("margin-bottom",""+video_box_margin_buttom+"px");
+              }*/
+
+            })
+          }
+
+
+        /*$(".video_box").each(function(index) {
+         $(this).css("width","235px");
+         $(this).css("height","150px");
+          if(index==0 || index==1)
+          {
+          var video_box_margin_buttom=right_width-470;
+            $(this).css("margin-bottom",""+video_box_margin_buttom+"px");
+          }
+          });
+*/
+         
+        }
+        
+
+  
+
+}
+
+
+function gup( name )
+{
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  if( results == null )
+    return "";
+  else
+    return results[1];
+}
+
+//sumplhrwnei tis plhrofories gia ton kallitexnh pernontas eikones kai bio apo to last.fm kai video apo to youtube
+  function complete_artists_info(data){
+
+    var artist_1=removePunctuation(data[0].fields.name);
+    var html="<div id='art"+nArtists+"'><div class='artist_info'><div id='artist_name' class='venue_name'>"+artist_1+"</div>"+
+                  "<span class='about' >Biography :</span> </br>"+
+                  "<div class='info' id='biography'>"+data[0].fields.bio+"</div>"+
+                  "</div><span class='about' >Images:</span>"+
+                  "<div class='images'>"+
+                  "</div><span class='about' >Videos:</span><div class='videos'>"+
+                  
+                  "</div><hr/>";
+ 
+ 
+        $("#poster_view #main #right .artists_details").append(html);
+        if(data[0].fields.bio.length==0)
+        {
+          $("#art"+nArtists+" #biography").html("No bio found");
+        }
+        
+
+        make_image_grid(nArtists,data);
+        
+        make_video_grid(nArtists,data);
+        
+        
+        nArtists++;
+  }
+
+
+
+  function loadVideo(playerUrl, autoplay,j,n) {
+    j++;
+    swfobject.embedSWF(
+        playerUrl + '&rel=1&border=0&fs=1&autoplay=' +
+        (autoplay?1:0), n+"vid"+j, '235', '150', '9.0.0', false,
+        false, {allowfullscreen: 'true'});
+
+  if(video_columns==1)
+      {
+  //console.log("video widths ",right_width-2)
+        $("#"+n+"vid"+j).css("width",""+right_width-2+"px");
+        $("#"+n+"vid"+j).css("height",""+(right_width-2)/1.5+"px");
+      }
+    else if(video_columns==2)
+  {
+    video_width=(right_width-20)/2;
+   // console.log("video_widths 235");
+    $("#"+n+"vid"+j).css("width",video_width);
+    $("#"+n+"vid"+j).css("height",video_width/1.5);
+  }
+  
+    
+}
+
+
+
+/*function getArtistVideo(data,n){
+
+    $.getJSON("http://gdata.youtube.com/feeds/api/videos?max-results=4&alt=json&q="
+      +artist+"&format=5", function(data){
+
+    var feed = data.feed;
+    var entries = feed.entry || [];
+
+    for(j=0; j<entries.length; j++)
+    {
+      loadVideo(entries[j].media$group.media$content[0].url, false,j,n);                                }
+    });
+}*/
+
+
+function getArtistVideo(data,n){
+
+  //populate videos
+  if(data[0].fields.videos==null)
+  {
+    return;
+  }
+var vid_urls=data[0].fields.videos.split("[");
+    vid_urls=vid_urls[1].split("]");
+    //var urls=object.fields.images.split(",");
+    vid_urls=vid_urls[0].split(",");
+   // console.log("artists vid_urls",vid_urls.length);
+    
+    if(vid_urls.length>1)
+    {
+      for(j=0; j<vid_urls.length; j++)
+        {
+
+          vid_url=vid_urls[j].replace(/"/g, '');
+
+          $("#"+n+"vid"+(j+1)).replaceWith("<iframe  id="+n+"vid"+(j+1)+" src="+vid_url+" frameborder='0' allowfullscreen></iframe>");
+          if(video_columns==1)
+          {
+          //onsole.log("video widths ",right_width-2)
+            $("#"+n+"vid"+(j+1)).css("width",""+right_width-2+"px");
+          }
+            else if(video_columns==2)
+          {
+            video_width=(right_width-20)/2;
+           // console.log("video_widths 235");
+            $("#"+n+"vid"+(j+1)).css("width",video_width);
+            $("#"+n+"vid"+(j+1)).css("height",video_width/1.5);
+          }
+               
+          //console.log(vid_url);
+   
+          
+        }
+    }
+    else
+    {
+      $("#art"+n+" .videos").html("No videos");
+    }
+      
+    
+
+
+  }
+
+
+function putArtistImages(object,n){
+
+//populate images
+
+  if(object[0].fields.images!=null)
+  {
+    var img_urls=object[0].fields.images.split("[");
+    img_urls=img_urls[1].split("]");
+    //var urls=object.fields.images.split(",");
+    img_urls=img_urls[0].split(",");
+    for(i=0; i<img_urls.length; i++)
+      {
+     img_urls[i] = img_urls[i].replace(/\"/g,'');
+  
+      }
+    
+   // console.log("artists img_urls",img_urls.length,img_urls);
+    if(img_urls[0] !="")
+    {
+      var l=1;
+      for(i=0; i<img_urls.length; i++)
+      {
+      //console.log("images",i,img_urls[i]);
+      $("#"+n+"img"+l).css("background-image","url("+img_urls[i]+")");
+        l++;
+  
+      }
+    }
+    else
+    {
+      $("#art"+n+" .images").html("No images");
+    }
+  }
+
+
+
+}

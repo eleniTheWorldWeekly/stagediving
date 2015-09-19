@@ -1,0 +1,189 @@
+.add_event .main .left .poster .add_poster{
+	background-image:url(../icons/add-poster.png);
+	background-position:left;
+	background-repeat:no-repeat;
+	width: 30px;
+height: 30px;
+background-color: #333;
+border: none;
+	}
+.add_event .main .left .poster .add_poster:hover{
+	cursor:pointer;
+	background-image:url(static/icons/add-poster-over.png);}
+.add_event .main .left .poster {
+	height: 300px;
+	padding-top: 250px;
+padding-left: 130px;
+	}
+.add_event .main .left .poster .add_poster_let{
+	line-height: 17px;
+font-size: 13px;
+color: white;
+font-family: Arial, Helvetica, sans-serif;
+letter-spacing: 0.9px;
+font-weight: 100;
+	margin-top: -23px;
+margin-left: 41px;
+	}
+
+.add_event .main .right .title{
+	margin-bottom:20px;}
+
+.add_event .main .right .data{
+	color:#CCCCCC;}
+
+.add_event .main .right .data .field{
+	outline: none;
+	font-weight: 200;
+font-size: 12px;
+font-family: Arial, Helvetica, sans-serif;
+text-align: center;
+width: 83px;
+height: 29px;
+background-color: #CCC;
+box-shadow: 0 8px 5px -6px black inset;
+border: none;
+margin-top: 10px;
+	}
+
+.add_event .main .right .data .date{
+	color:black;
+	margin-left:77px;
+	width:115px;}
+
+.add_event .main .right .data .time{
+	width:85px;
+	margin-left:74px;}
+
+.add_event .main .right .data .town{
+	width:350px;
+	margin-left:69px;}
+
+.add_event .main .right .data .entrance{
+	width:70px;
+	margin-left:51px;}
+
+.add_event .main .right .data hr{
+	border-color: #999;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	}
+
+.add_event .main .right .data .artist{
+	width:340px;
+	}
+
+.add_event .main .right .data .add_another_artst{
+	margin-top: 12px;
+
+	margin-left: -2px;
+	height:30px;
+	width:110px;
+	font-size: 12px;
+	color:#CCCCCC;
+	border:1px solid #333333;
+	background: #999999; /* Old browsers */
+background: #45484d; /* Old browsers */
+background: -moz-linear-gradient(top,  #45484d 0%, #000000 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #45484d 0%,#000000 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%); /* IE10+ */
+background: linear-gradient(top,  #45484d 0%,#000000 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+	}
+
+.add_event .main .right .data .add_another_artst:hover{
+	cursor:pointer;
+	}
+.add_event .main .right .data .venue_nam{
+	margin-left: 49px;
+	width:350px;
+	}
+
+.add_event .main .right .data .venue_address{
+	margin-left: 38px;
+	width:350px;
+	}
+
+.add_event .main .right .data .venue_country{
+	margin-left: 38px;
+	width:350px;
+	}
+
+.add_event .main .right .data .venue_url{
+	margin-left: 69px;
+        width: 350px;
+	}
+
+.add_event .main .right .data .venue_capacity{
+	margin-left: 34px;
+	width:350px;
+	}
+
+.add_event .main .right .data .venue_phone{
+	margin-left: 50px;
+	width:350px;
+	}
+.add_event .main .right .data .venue_genre{
+	margin-left: 51px;
+	width:350px;
+	}
+
+.add_event .main .right .save_event{
+	border:none;
+	width:200px;
+	height:35px;
+	background-image:url(static/icons/save_event.jpg);}
+
+.add_event .main .right .save_event:hover{
+	cursor:pointer;}
+
+#results{
+
+    color: white;
+}
+
+#backgroundPopup{
+    display:none;
+    position:fixed;
+    /*_position:absolute;  hack for internet explorer 6*/
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    background:#000000;
+    background:url(../icons/overlay.png) repeat 0 0;
+    border:1px solid #cecece;
+    z-index:1;
+    }
+     #popupContact{
+    margin-left: 46px;
+    height: 58px;
+    margin-top: 151px;
+    display:none;
+    position:fixed;
+    /*_position:fixed;  hack for internet explorer 6
+    height:384px;
+    width:408px;
+    background:#FFFFFF;  edoo to xromaaaaaaa*/
+    
+    
+    border:2px solid #cecece;
+    z-index:2;
+    padding:12px;
+    font-size:13px;
+    
+    }
+
+    #popupContactClose{
+    font-size:14px;
+    line-height:14px;
+    right:6px;
+    top:4px;
+    position:absolute;
+    color:white;
+    font-weight:700;
+    display:block;
+    cursor: pointer;
+    }

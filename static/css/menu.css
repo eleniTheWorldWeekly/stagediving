@@ -1,0 +1,297 @@
+.top_menu{
+	height:410px;
+	background-color:#000;
+	}
+
+.logo{
+	width: 410px;
+	height: 92px;
+	background-image: url(../icons/logo2.jpg);
+
+	background-repeat:no-repeat;
+	}
+
+.view {
+	margin:20px;
+	margin-top:0px;
+	height: 30px;
+	margin-bottom: -13px;
+	font-size: 14px;
+
+
+	}
+        .wall_buttom{
+            width: 40%;
+            cursor: pointer;
+}
+.list_buttom{
+        margin-top: -14px;
+        width: 80px;
+margin-left: 124px;
+cursor: pointer;
+}
+.wall_view{
+	margin-left: 19px;
+	margin-top: -15px;
+	
+	color:#FFF;
+	}
+
+.imageWall{
+	background-repeat:no-repeat;
+	background-image:url(../icons/wall_view_white.jpg);
+	background-image:url(../icons/wall-view-over.png);
+
+	width: 13px;
+	height: 13px;
+	}
+
+
+
+/*.imageWall:hover{
+	
+	background-image:url(../icons/wall-view.png);
+	cursor:pointer;
+	}
+.imageList:hover{
+	background-image:url(../icons/list_view_white.gif);
+	cursor:pointer;
+	} */
+       
+.imageList{
+	background-repeat:no-repeat;
+	background-image:url(../icons/list_view_1.jpg);
+	
+	width: 13px;
+	height: 13px;
+	
+	}
+hr{
+	margin-top: 0;
+	float:left;
+	color:red;
+	height:0.7px;
+	width:50px;
+
+	}
+
+hr.right{
+	margin-top: 0;
+	float:right;
+
+	height:0.7px;
+	width:50px;
+
+	}
+
+#concerts
+{
+	margin-left: 59px;
+    margin-top: -11px;
+    position: absolute;
+	font-family:"PFFusionSans Heavy";
+	letter-spacing:1px;
+	font-size:21px;
+	background-color:#000;
+	width: 100px;
+	margin-left: 51px;
+	text-align: center;
+	}
+.list_view{
+	
+	margin-top: -15px;
+        margin-left: 19px;
+	}
+.filter{
+	margin:20px;
+	height:260px;
+
+	border-bottom:2px solid #333333;
+	border-left:2px solid #333333;
+	border-right:2px solid #333333;
+	border-top:2px solid #333333;
+	}
+
+
+.inside_filter{
+        color: #CCC;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+	margin:10px;
+	margin-bottom:20px;
+	padding-top: 10px;
+	}
+
+.all,.popular,.recomended{
+	font-size:12px;
+	/*margin-top: -14px;*/
+	margin-left: 28px;
+        bottom: -3px;
+position: relative;
+	}
+.image_all{
+	background-image:url(../icons/selected.jpg);
+	background-repeat:no-repeat;
+	background-position:left;
+	width: 15px;
+	height: 15px;
+	cursor:pointer;}
+.image_popular,.image_recomended{
+	background-image:url(../icons/no_selected.jpg);
+	background-repeat:no-repeat;
+	background-position:left;
+	width: 15px;
+	height: 15px;
+	margin-top: 14px;
+	cursor:pointer;
+	}
+.from_to{
+	font-weight:200;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	text-align: center;
+	width:83px;
+	height:29px;
+	background-color: #CCC;
+	box-shadow: 0 8px 5px -6px black inset;
+	border:none;
+	margin-top: 7px;
+	}
+
+.from_to:hover{
+        border:#F00 solid 1px;
+	/*-moz-box-shadow: 1px 1px 5px #ED1C24;
+	-webkit-box-shadow: 1px 1px 5px #ED1C24;
+        box-shadow: 1px 1px 5px #ED1C24;*/
+		cursor:pointer;
+	}
+.to{
+	float:right;
+	}
+label.to{
+
+	margin-right: 65px;}
+label.to,label.from{
+
+	font-size:12px;}
+/*input[type=radio] {content:url(mycheckbox.png)}
+input[type=radio]:checked {content:url(mycheckbox.png)}
+*/
+
+.track_cities_button{
+	margin-left: -2px;
+	height:40px;
+	width:179px;
+	font-weight:bold;
+	color:white;
+	border:1px solid #333333;
+	top: 331px;
+	position: absolute;
+	background: #999999; /* Old browsers */
+background: #45484d; /* Old browsers */
+background: -moz-linear-gradient(top,  #45484d 0%, #000000 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #45484d 0%,#000000 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%); /* IE10+ */
+background: linear-gradient(top,  #45484d 0%,#000000 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+
+	}
+	.track_cities_button:hover{
+	-moz-background: #999999;
+	-webkit-background: #999999;
+        background: #999999;
+		cursor:pointer;
+
+	}
+        #display_cities{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 115px;
+float: right;
+margin-top: 0px;
+}
+#cities{
+    margin-top: 10px;
+        overflow-y: hidden;
+height: 16px;
+position: absolute;
+width: 171px;
+	font-size:12px;
+	}
+
+.nav_buttons{
+	color:#FFFFFF;
+	font-weight:bold;
+	height:50px;
+	border:1px solid #333333;
+	padding-left:20px;
+
+
+	}
+.nav_buttons:hover{
+	-moz-background: #333333;
+	-webkit-background: #333333;
+        background: #333333;
+		cursor:pointer;
+
+	}
+
+.login{
+	font-size:14px;
+	margin-left: 26px;
+	margin-top: -22px;
+		}
+.image_login{
+	background-image:url(../icons/login.png);
+	background-position:left;
+	background-repeat:no-repeat;
+	width: 20px;
+	height: 30px;
+	margin-top: 8px;
+	margin-left: 2px;
+	}
+
+.image_login:hover{
+	-moz-background: url(../icons/login-over.png) left no-repeat;
+	-webkit-background:url(../icons/login-over.png) left no-repeat;
+        background: url(../icons/login-over.png) left no-repeat;
+
+}
+.add_event{
+	font-size:14px;
+	margin-left: 26px;
+	margin-top: -22px;
+	}
+
+.image_add_event{
+	background-image:url(../icons/add-event.png);
+
+	background-position:left;
+	background-repeat:no-repeat;
+	width: 20px;
+height: 30px;
+margin-top: 8px;
+
+	}
+.image_add_event:hover{
+	-moz-background: url(../icons/add-event-over.png) left no-repeat;
+	-webkit-background:url(../icons/add-event-over.png) left no-repeat;
+        background:url(../icons/add-event-over.png) left no-repeat;
+
+}
+
+.search_by_artist,.my_concerts{
+	font-size:14px;
+	margin-top:18px;}
+
+
+.aboutSD{
+
+padding-top: 13px;
+font-size: 13px;
+border: none;
+font-weight: normal;
+
+}

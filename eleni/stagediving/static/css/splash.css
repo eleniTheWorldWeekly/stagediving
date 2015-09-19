@@ -1,0 +1,229 @@
+.lrdiscoverwidget.dark-d
+{
+	float:left;
+}
+
+.site.lrcontent
+{
+	margin: 0px 0px 0px ;
+}
+
+/*.lrdiscoverwidget{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}*/
+
+.lrdiscoverwidget .inviteform .field
+{
+			position: absolute;
+			width: 360px;
+			top: 385px;
+			margin-left: 26%;		
+			height: 30px;
+			border: 2px solid #ED1C24;
+			font-size: 20px;
+			padding: 5px;
+			color: black;
+			border-radius:0;
+			background: #626460; /* Old browsers */
+			background: -moz-linear-gradient(top,  #626460 0%, #d0d0ce 31%, #d0d0ce 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#626460), color-stop(31%,#d0d0ce), color-stop(100%,#d0d0ce)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  #626460 0%,#d0d0ce 31%,#d0d0ce 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  #626460 0%,#d0d0ce 31%,#d0d0ce 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  #626460 0%,#d0d0ce 31%,#d0d0ce 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  #626460 0%,#d0d0ce 31%,#d0d0ce 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#626460', endColorstr='#d0d0ce',GradientType=0 ); /* IE6-9 */
+
+}
+
+body{
+			overflow: hidden;
+			color: white;
+			font-family: arial, helvetica;
+			padding:0;
+			margin: 0;
+			background-image: url('../icons/girls.jpg');
+			-webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-position: 50%;
+		padding-top:20px;
+	font-family: PFFusion; src: url('../fonts/PFFusionSansHeavy.ttf');
+	
+		}
+		
+		/*img.cover{
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+		}*/
+		
+		@font-face { font-family: PFFusion; src: url('../fonts/PFFusionSansHeavy.ttf'); }
+		@font-face { font-family: Captain; src: url('../fonts/AmericanCaptain.ttf'); }  
+
+.lrdiscoverwidget .inviteform .submit, .submit
+{
+	font-family: Captain, Helvetica, Arial;
+			letter-spacing: 2px;
+			position: absolute;
+			width: 100px;
+			height: 44px;
+			padding: 5px;
+			top: 375px;
+			left: 122%;
+			right: 0px;
+			cursor: pointer;
+			font-size: 22px;
+			margin-top: 10px;
+			color: white;
+			border: 2px solid #ED1C24;
+			border-radius: 0;
+
+			background: #333333; /* Old browsers */
+			background: -moz-linear-gradient(top,  #333333 44%, #070707 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(44%,#333333), color-stop(100%,#070707)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  #333333 44%,#070707 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  #333333 44%,#070707 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  #333333 44%,#070707 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  #333333 44%,#070707 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#070707',GradientType=0 ); /* IE6-9 */
+		
+}
+
+
+.lrdiscoverwidget .site-powered-by
+{
+
+display: none;
+}
+		
+		div{
+			z-index: 100;
+		}
+		#logocontainer{
+			top: -30%;
+			left: 30%;
+			position: absolute;
+		}
+		#logo{
+			/*top: 10%;
+			left: 10%;*/
+			font-size: 80px;
+			font-family: PFFusion,sans-serif, Helvetica;
+			
+		}
+		span{
+			color: #ED1C24;
+		}
+		#catchphrase{
+			position: absolute;
+			font-size: 18px;
+			width: 172px;
+			top: 60px;
+			left: 166px;
+			color: white;
+			text-align: justify;
+			text-justify: inter-word;
+		}
+		.container{
+			text-align: left;
+			width: 500px;
+			left: 30%;
+			top: 100%;
+			height: 100%;
+			position: absolute;
+			line-height: 1;
+		}
+		.first{
+
+		}
+		.second{
+			display:none;
+		}
+		#message{
+			width: 100%;
+			height: auto;
+		}
+		#thankyou{
+			width: 100%;
+			height: auto;
+		}
+		.phrase{
+			font-family: Captain, Helvetica, Arial;
+			font-size: 40px;
+		}
+		.phrase.large{
+			font-size: 70px;
+			top: 90px;
+		}
+		.phrase.small{
+			margin-top: 15px;
+			font-size: 20px;
+			font-family: arial;
+		}
+		.phrase.small img{
+			position: relative;
+			margin-left: 8px;
+			top: 8px;
+		}
+		.prompt{
+			position: absolute;
+			font-size: 19px;
+			top: 200px;
+		}
+		
+		}
+		input::-webkit-input-placeholder {
+		    color:    rgb(51,51,51);
+		}
+		input:-moz-placeholder {
+		    color:   rgb(51,51,51);
+		}
+		input:-ms-input-placeholder {
+		    color:    rgb(51,51,51);
+		}
+		
+			.signup_error{
+		
+		position:absolute;
+		top: 265%;
+		font-size: 14px;
+		left: 18%;
+}
+
+		input[type="submit"]:hover{
+			background: #666666; /* Old browsers */
+			background: -moz-linear-gradient(top,  #666666 44%, #393939 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(44%,#666666), color-stop(100%,#393939)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  #666666 44%,#393939 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  #666666 44%,#393939 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  #666666 44%,#393939 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  #666666 44%,#393939 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#393939',GradientType=0 ); /* IE6-9 */
+		}
+		
+		.footer{
+			width: 100%;
+			position: absolute;
+			bottom: 20px;
+			left: 9%;
+		}
+		
+		.footer img{
+			position: relative;
+			top: 5px;
+			width: 25px;
+			margin-left: 5px;
+			margin-right: 3px;
+		}
+	
+		
+		.footer span.logo{
+			color: white;
+			padding-right: 5px;
+			font-size: 18px;
+			font-family: PFFusion,sans-serif, Helvetica;
+		}

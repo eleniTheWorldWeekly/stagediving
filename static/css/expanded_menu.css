@@ -1,0 +1,280 @@
+.expanded{
+	width:480px;
+	z-index: 100;
+	background-color:#333333;
+	font-family:"PFFusionSans Heavy";
+	color:#FFF;
+	font-size:28px;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:16px;
+	position:fixed;
+	left:-380px;
+	top: 0px;
+        height:100%;
+	-webkit-transition:left 1s ease-in;
+   -moz-transition:left 1s ease-in;
+   -o-transition:left 1s ease-in;
+   transition:left 1s ease-in;
+   overflow-y: scroll;
+}
+
+.search_by-artist > h2, .expanded > h2 {
+	margin:0px;
+	}
+
+.search_by-artist > hr, .expanded > hr , .list_view_conten > hr{
+	height: 5px;
+background-color: white;
+margin-top: 0px;;
+width: 100%;
+	}
+
+.search_content > hr{
+
+
+	width:100%;
+	background-color:#333333;}
+.close{
+	float: right;
+margin-top: -34px;
+margin-right: 0px;
+background-image: url(../icons/close.jpg);
+width: 23px;
+height: 23px;
+cursor:pointer;
+	}
+.close:hover{
+
+     background-image: url(../icons/close-over.png);
+}
+
+/*.artist_field{
+	border:none;
+	height:30px;
+	background-image:url(../../images/search.jpg);
+	background-position:right;
+	background-repeat:no-repeat;
+	width:100%;
+	font-size:15px;
+	font-weight:bolder;
+	font-weight:bold;
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.69) inset;
+	cursor:pointer;}
+
+	.artist_field:hover{
+	-moz-box-shadow: 2px 1px 5px #ED1C24;
+	-webkit-box-shadow: 2px 1px 5px #ED1C24;
+        box-shadow: 2px 1px 5px #ED1C24;
+	}
+	*/
+fieldset.artist{
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.69) inset;
+	background: white;
+	width: 440px;
+	margin-top: 21px;
+	margin-left: 0px;
+	height:30px;
+	border: none;
+	height: 4px;
+	}
+fieldset.artist:hover{
+	border:#F00 solid 1px;
+	}
+.artist .artist_field{
+margin-top: -7px;
+margin-left: -20px;
+position: absolute;
+height: 26px;
+border: none;
+width: 80%;
+outline: none;
+font-size:15px;
+padding-left: 10px;
+	color:#333333;
+
+}
+fieldset.artist .search{
+	background-image:url(../icons/search.jpg);
+	margin-left: 427px;
+margin-top: -9px;
+width: 34px;
+border: none;
+height: 30px;
+cursor:pointer;
+}
+
+hr.line{
+	border: none;
+height: 2px;
+background-color: #999;
+	margin-bottom:20px;
+	margin-top:20px;}
+
+.search_content{
+margin-top: 20px;
+	}
+
+.search_by-artist .search_content .item{
+	padding-left: 7px;
+	padding-top:19px;
+	height:106px;
+	width:100%;
+	border-bottom: 2px solid #999999;
+	}
+.search_by-artist .search_content .poster{
+	width:63px;
+	height:90px;
+	background-image:url(../icons/thumb_poster.jpg);
+        background-size: cover;}
+
+.search_by-artist .search_content .info{
+	line-height:20px;
+
+	margin-left: 85px;
+	margin-top: -84px;}
+
+.search_by-artist .search_content .info .date, .search_by-artist .search_content .info .artist{
+	font-size: 12px;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+.search_by-artist .search_content .info .artist{
+	line-height:27px;
+	font-weight:bold;}
+.search_by-artist .search_content .info .place, .city{
+	line-height:16px;
+	font-size: 12px;
+	color:#999999;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+/*.search_by-artist .search_content .attend{
+	width:100px;
+	height:50px;
+	background-image:url(../../images/attend.jpg);
+	float:right;
+	background-repeat:no-repeat;
+	margin-top: -55px;
+	margin-right: -30px;
+	font-size: 20px;
+	}
+
+	.search_by-artist .search_content .attend .text{
+	margin-top: 9px;
+margin-left: 12px;
+letter-spacing: 1px;}
+	*/
+.search_by-artist .search_content .attend{
+	width:100px;
+	height:50px;
+	background-image:url(../icons/attend-active-2.png);
+	float:right;
+	background-repeat:no-repeat;
+	margin-top: -55px;
+	margin-right: -21px;
+	font-size: 20px;
+	}
+
+
+.cities_buttom{
+	background-image:url(../icons/no_selected.jpg);
+	background-repeat:no-repeat;
+	background-position:left;
+	width: 15px;
+	height: 15px;
+	margin-top: 14px;
+	cursor:pointer;
+
+	}
+
+.city_name{
+	margin-left: 27px;
+margin-top: -16px;
+	}
+
+.city{
+	line-height:16px;
+	font-size: 13px;
+	color:#999999;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.left_cities{
+	width: 240px;
+	}
+.right_cities{
+	margin-top: -673px;
+width: 240px;
+
+	float:right;}
+
+.letter{
+	font-size:30px;
+	font-family:"PFFusionSans Heavy";
+	margin-bottom: 16px;}
+
+.login_register .login , .login_register .register{
+	font-family: Arial, Helvetica, sans-serif;
+	/*width:50%;*/
+	color: white;
+font-weight: bold;
+font-size: 14px;
+
+	}
+.login_register .login{
+	float:left;
+	margin-top: 4px;
+	text-align:left;
+	margin-left: 0px;}
+
+.login_register .register{
+	cursor:pointer;
+	margin-top: 5px;
+	}
+.login > form{
+	margin-top:30px;}
+.login > form > input{
+	outline:none;
+	font-weight: 200;
+	padding-left: 10px;
+font-size: 12px;
+font-family: Arial, Helvetica, sans-serif;
+
+width: 80%;
+height: 29px;
+background-color: #CCC;
+box-shadow: 0 8px 5px -6px black inset;
+border: none;
+margin-bottom:15px;
+	}
+.login > form > button{
+	margin-left: -2px;
+	height:30px;
+	width:110px;
+	font-weight:bold;
+	color:white;
+	border:1px solid #999999;
+	top: 331px;
+	cursor:pointer;
+	background: #999999; /* Old browsers */
+background: #45484d; /* Old browsers */
+background: -moz-linear-gradient(top,  #45484d 0%, #000000 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #45484d 0%,#000000 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%); /* IE10+ */
+background: linear-gradient(top,  #45484d 0%,#000000 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+
+	}
+.login_register .login #pass_forgotten{
+	font-size: 12px;
+	color: #CCC;
+	font-family: Arial, Helvetica, sans-serif;
+
+	}
+
+        #login_from_register{
+
+            cursor: pointer;
+}

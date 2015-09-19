@@ -1,0 +1,448 @@
+@font-face {
+font-family: PFFusionSans Heavy;
+src: url(PFFusionSansHeavy.ttf);
+}
+
+@font-face {
+font-family: PFFusionSans Light;
+src: url(PFFusionSans Light.ttf);
+}
+
+@font-face {
+font-family: PFFusionSans Medium;
+src: url(PFFusionSans Medium.ttf);
+}
+
+
+#poster_view_body
+{
+	width: 70%;
+	background-color: #333;
+	margin-left: 19%;
+	position: relative;
+	overflow: auto;
+	height: 100%;
+min-height: 100%;
+	z-index: 350;
+	/*top: 100%;
+	display: none;*/
+	visibility: hidden;
+	-webkit-transition: display 1s ease-in;
+   	-moz-transition: display 1s ease-in;
+   	-o-transition: display 1s ease-in;
+   	transition: display 1s ease-in;
+   	
+}
+#poster_view
+{
+	
+	
+	
+	
+	background-color: #333;
+	/*-webkit-transition: margin-top -1s linear;
+   	-moz-transition: margin-top -1s linear;
+   	-o-transition: margin-top -1s linear;
+   	transition: margin-top -1s linear;*/
+	overflow: auto;
+	height: auto;
+}
+
+#poster_view #header {
+background-color: #333;
+
+
+height: 70px;
+border-bottom: white solid 5px;
+width: 74%;
+/*position: fixed;*/
+}
+#poster_view #close_poster_view {
+float: right;
+margin-top: 37px;
+margin-right: 7px;
+background-image: url(../icons/close.png);
+width: 22px;
+height: 21px;
+cursor: pointer;
+}
+
+#poster_view #left_anchor {
+float: right;
+margin-top: 37px;
+margin-right: 12px;
+background-image: url(../icons/previews.png);
+width: 22px;
+height: 21px;
+cursor: pointer;
+background-repeat: no-repeat;
+}
+
+
+.poster_view_via_share body #poster_view_body #poster_view #right_anchor
+{
+	display: none;
+}
+
+.poster_view_via_share body #poster_view_body #poster_view #left_anchor
+{
+	display: none;
+}
+
+#poster_view #right_anchor {
+float: right;
+margin-top: 37px;
+margin-right: 13px;
+background-image: url(../icons/next.png);
+width: 22px;
+height: 21px;
+cursor: pointer;
+background-repeat: no-repeat;
+}
+
+#poster_view #close_poster_view:hover{
+    background-image:url(../icons/close-over.png);
+
+}
+
+#poster_view #left_anchor:hover {
+	background-image:url(../icons/previews-over.png);
+}
+
+#poster_view #right_anchor:hover {
+	background-image:url(../icons/next-over.png);
+}
+
+#poster_view #main
+{
+	height: 100%;
+	margin-top: 30px;
+	overflow: auto;
+}
+.sticky-wrapper {
+float: left;
+}
+
+#poster_view #main #left
+{
+height: 100%;
+float: left;
+/*position: fixed;*/
+
+}
+
+
+#poster_view #main #left #poster {
+
+width: 100%;
+background: url(../icons/default_poster.jpg) no-repeat center center;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+#poster_view #main #right
+{
+overflow-x: hidden;
+font-family: Arial, Helvetica, sans-serif;
+height: 100%;
+float: right;
+}
+
+#poster_view #main #right #event_poster
+{
+	display: none;
+}
+
+#poster_view #main #right .date
+{
+line-height: 1;
+color: red;
+font-family: "Fusion Sans Pro Heavy";
+font-size: 18px;
+}
+
+#poster_view #main #right .artists div
+{
+	margin-top: 6px;
+}
+#poster_view #main #right .artists
+{
+	font-family:"Fusion Sans Pro Greek Heavy","Fusion Sans Pro Heavy";
+	font-weight: bold;
+	color: white;
+	margin-bottom: 8px;
+	
+	margin-top: 10px;
+	font-size: 38px;
+	text-transform: uppercase;
+	line-height: 1.2;
+}
+
+#poster_view #main #right #poster_view_main_info, .thumb_info {
+line-height: 19px;
+font-size: 13px;
+color: #999;
+
+font-weight: 100;
+}
+
+#poster_view_description 
+{
+	color: white;
+text-transform: none;
+}
+
+#poster_view_town, #poster_view_time, #poster_view_venue, #poster_view_time, #poster_view_entrance{
+color: white;
+text-transform: capitalize;
+}
+#poster_view #main #right #attend {
+background-repeat: no-repeat;
+padding-top: 3px;
+margin-top: 11px;
+margin-left: -7px;
+width: 135px;
+height: 50px;
+background-image: url(../icons/attend.png);
+}
+
+#poster_view #main #right #attend #attend_number {
+font-size: 20px;
+font-family: "Fusion Sans Pro Greek Heavy","Fusion Sans Pro Heavy";
+color: white;
+margin-left: 17px;
+margin-top: 8px;
+
+}
+
+#poster_view #main #right #shares {
+font-size: 13px;
+
+border-top: 1px solid #999;
+border-bottom: 1px solid #999;
+height: 48px;
+margin-top: 10px;
+}
+
+#poster_view #main #right #facebook {
+margin-top: 11px;
+width: 85px;
+cursor: pointer;
+}
+
+#poster_view #main #right #facebook_share {
+background-image: url(../icons/facebook.png);
+background-position: left;
+background-repeat: no-repeat;
+width: 11px;
+height: 22px;
+}
+
+#poster_view #main #right #facebook_share:hover{
+	background-image:url(../icons/facebook-over.png);
+	cursor:pointer;}
+
+#poster_view #main #right .fac_lett {
+color: white;
+margin-left: 20px;
+margin-top: -18px;
+}
+
+#poster_view #main #right #twitter {
+margin-top: 5px;
+margin-left: 115px;
+cursor: pointer;
+width: 75px;
+}
+
+#poster_view #main #right #twitter_share {
+margin-top: -23px;
+background-image: url(../icons/twitter.png);
+background-position: left;
+background-repeat: no-repeat;
+width: 11px;
+height: 22px;
+}
+
+#poster_view #main #right #twitter_share:hover{
+	background-image:url(../icons/twitter-over.png);
+	cursor:pointer;}
+
+#poster_view #main #right #twit_lett {
+margin-top: -20px;
+margin-left: 19px;
+color: white;
+}
+
+#poster_view #main #right #google {
+margin-top: 4px;
+margin-left: 215px;
+cursor: pointer;
+width: 75px;
+display: none;
+}
+
+#poster_view #main #right #share {
+margin-top: -23px;
+background-image: url(../icons/pinterest.png);
+background-position: left;
+background-repeat: no-repeat;
+width: 23px;
+height: 25px;
+}
+
+#poster_view #main #right #share:hover{
+	/*background-image:url(../icons/share-over.png);*/
+	cursor:pointer;}
+
+#poster_view #main #right #share_lett {
+margin-top: -22px;
+margin-left: 26px;
+color: white;
+}
+
+#main #right #venue_info {
+overflow: hidden;
+height: auto;
+margin-top: 15px;
+}
+
+#poster_view #main #right .venue_name {
+font-family: "Fusion Sans Pro Greek Heavy","Fusion Sans Pro Heavy";
+font-size: 24px;
+color: white;
+text-transform: uppercase;
+margin-bottom: 15px;
+}
+
+#venue_address, #venue_city, #venue_country {
+display: none;
+}
+
+#poster_view #main #right #venue_info #map {
+cursor: pointer;
+margin-bottom: 24px;
+font-size: 13px;
+}
+
+#poster_view #main #right #venue_info #map #map_icon {
+background-image: url(../icons/map.png);
+background-repeat: no-repeat;
+width: 13px;
+height: 18px;
+}
+
+#poster_view #main #right .fac_lett {
+color: white;
+margin-left: 20px;
+margin-top: -18px;
+}
+
+.map_canvas {
+width:100%;
+overflow: hidden;
+height: 0px;
+-webkit-transition: height 1s ease-in;
+-moz-transition: height 1s ease-in;
+-o-transition: height 1s ease-in;
+transition: height 1s ease-in;
+}
+
+#poster_view #main #right > hr, #poster_view #main #right .artists_details > div > hr {
+border: none;
+height: 1px;
+background: #CCC;
+float: none;
+width: 100%;
+}
+
+
+
+#poster_view #main #right .artists_details,#poster_view #main #right .videos {
+overflow-x: hidden;
+overflow-y: auto;
+font-size: 13px;
+line-height: 18px;
+}
+
+#poster_view #main #right .artist_info {
+margin-bottom: 30px;
+margin-top: 15px;
+}
+
+
+
+#poster_view #main #right .venue_name {
+font-family: "Fusion Sans Pro Greek Heavy","Fusion Sans Pro Heavy";
+font-size: 25px;
+color: white;
+text-transform: uppercase;
+margin-bottom: 15px;
+
+}
+
+#poster_view #main #right .about {
+color: #999;
+}
+
+#poster_view #main #right .info {
+font-size: 13px;
+font-family: Arial, Helvetica, sans-serif;
+color: white;
+}
+
+#poster_view #main #right .info a
+{
+	color: white;
+}
+
+#poster_view #main #right .images {
+padding-bottom: 30px;
+height: auto;
+
+color: white;
+}
+
+#poster_view #main #right .image_col {
+margin-left: 0px;
+margin-right: 0px;
+display: inline;
+float: left;
+width: 140px;
+margin-top: 20px;
+}
+
+#poster_view #main #right .images .image {
+margin-bottom: 20px;
+background-image: url(../icons/default-poster.png);
+background-position: center;
+background-repeat: no-repeat;
+width: 140px;
+-moz-background-size: cover;
+-o-background-size: cover;
+-webkit-background-size: cover;
+background-size: cover;
+border: #999 1px solid;
+}
+
+#poster_view #main #right .videos {
+margin-bottom: 20px;
+color: white;
+}
+
+#poster_view #main #right .video_box {
+width: 236px;
+margin-top: 20px;
+float: left;
+border: 1px solid #999;
+}
+
+
+#poster_view .footer_poster_view
+{
+	height: 100px;
+	width: 100%;
+	visibility: hidden;
+}

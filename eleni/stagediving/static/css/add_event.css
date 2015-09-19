@@ -1,0 +1,883 @@
+#add_event_exp{
+	
+    background-color: #333333;
+    color: white;
+    font-family: "Fusion Sans Pro Greek Heavy","Fusion Sans Pro Heavy";
+    font-size: 28px;
+    left: -750px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 16px;
+    top: 0;
+    width: 720px !important;
+    z-index: 100;
+    height: 100%;
+}
+
+#main {
+height: 100%;
+}
+
+#add_event_exp #add_event_content .sign_up
+{
+	display: none;
+	margin-top: 20px;
+	width: 250px;
+}
+
+#add_event_exp #add_event_content .you_have_to_login .login
+{
+	margin-left: 0px;
+	margin-top: 20px;
+	width: 250px;
+}
+
+#add_event_exp #main #left {
+margin-top: 15px;
+margin-right: 22px;
+height: 560px;
+width: 340px;
+float: left;
+margin-left: 8px;
+}
+#add_event_content {
+font-family: Helvetica, Arial, sans-serif;
+font-size: 14px;
+margin-top: 0px;
+margin-left: -8px;
+width: 100%;
+}
+
+.you_have_to_login
+{
+	margin-left: 10px;
+    margin-top: 11px;
+}
+
+.user_data
+{
+	font-size: 14px;
+font-family: Arial;
+margin-top: 10px;
+display: block;
+}
+
+#text{
+	margin-bottom: 10px;
+font-size: 13px;
+color: white;
+}
+
+#add_event_exp #main #right {
+
+overflow-x: hidden;
+overflow-y: auto;
+margin-top: 15px;
+height: 100%;
+float: right;
+width: 320px;
+
+}
+#add_event_exp #artist_info
+{
+	margin-top: 48px;
+}
+#add_event_exp #event_info, #add_event_exp #artist_info, #add_event_exp #venue_info
+{
+	
+}
+
+#add_event_exp #add_event_content #main #right #data #venue_info
+{
+	overflow: visible;
+	
+}
+
+#message
+{
+	color: red;
+}
+
+#add_poster_txt
+{
+	margin-top: -25px;
+	margin-left: 47px;
+}
+#add_poster_img
+{
+	margin-left: 10px;
+	margin-top: 10px;
+}
+#add_poster_icon
+{
+
+	/*background-image: url(../icons/add-poster.png);*/
+}
+
+
+
+ div#data hr
+{
+	height: 0px;
+	border-top: 1px solid #999999;
+	margin-top: 30px;
+	margin-bottom: 12px;
+	width: 100%;
+}
+
+
+
+div#add_event_exp > div#add_event_content > div#main
+{
+	float: left;
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	overflow: auto;
+}
+
+div#add_event_exp > div#add_event_content
+{
+	background-color: #333333;
+}
+
+
+
+
+input[type="file"]
+{
+	margin-top: -27px;
+	opacity: 0;
+}
+
+
+
+.datepicker--opened .datepicker--calendar__wrap 
+{
+	max-height: 27em;
+}
+
+#add_event_poster_url
+{
+	width: 340px;
+}
+
+#form_add_poster{
+	
+	background-position:left;
+	background-repeat:no-repeat;
+	width: 201px;
+height: 50px;
+
+cursor: pointer;
+margin-left: 70px;
+    margin-top: 248px;
+position: absolute;
+border-radius: 3px;
+	}
+
+
+#form_add_poster.with_poster
+{
+	display: none;
+	background-color: #333333;
+}
+#fileupload{
+	height: 547px;
+width: 342px;
+
+    margin-top: 0px;
+}
+#fileupload:hover{
+	cursor:pointer;
+}
+
+#artist_autocomplete
+{
+	padding-left: 15px;
+	margin-top: 0px;
+	width: 244px;
+}
+div#add_event_exp > div#add_event_content > div#main > div#left > #poster {
+	border: none;
+	background-color: #0D0D0D !important;
+	width: 340px;
+	/*padding-top: 250px;
+	padding-left: 130px;
+	-webkit-background-size: cover;
+	background-size: cover;
+	*/
+	margin-left: 0px;
+	background-image: url(../icons/default_poster.jpg) no-repeat center center ;
+
+	}
+
+
+#add_poster_let{
+	line-height: 17px;
+font-size: 13px;
+color: white;
+font-family: Helvetica, Arial, sans-serif;
+font-weight: 100;
+	margin-top: -23px;
+margin-left: 41px;
+	}
+
+ #title{
+	margin-bottom:20px;}
+
+ #data{
+	
+	color:#CCCCCC;
+	}
+
+.field{
+	outline: none;
+	font-weight: 200;
+font-size: 12px;
+font-family: Helvetica, Arial, sans-serif;
+text-align: ledt;
+width: 259px;
+height: 29px;
+background-color: #CCC;
+
+border: none;
+margin-top: 10px;
+	}
+
+div#add_event_content div#main div#right div#data .date{
+	padding-left: 15px;
+	padding-right: 15px;
+	color:black;
+	margin-left: 34px;
+	width: 65px;
+	cursor: pointer;
+}
+
+.time{
+	padding-right: 15px;
+width: 32px;
+margin-left: 38px;
+padding-left: 15px;
+}
+
+.town{
+	width:350px;
+	margin-left:69px;}
+
+.entrance{
+	width: 16px;
+margin-left: 17px;
+margin-right: 15px;
+padding-left: 15px;
+padding-right: 15px;
+text-align: center;
+}
+
+label[for=id_description]
+{
+    display: block;
+margin-top: 10px;
+}
+#add_event_artist_bio.field
+{
+	width: 298px;
+}
+
+#id_description
+{
+	width: 318px;
+}
+
+#id_description, #add_event_artist_bio.field
+{
+	background-color: white;
+	box-sizing:border-box;
+	 -moz-box-sizing:border-box; 
+	 -webkit-box-sizing:border-box;
+	height: auto;
+	min-height: 200px;
+	margin-top: 7px;
+	color: black;
+	padding: 10px;
+	text-align: left;
+}
+#id_description a, #add_event_artist_bio.field a
+{
+	color: black;
+	text-decoration:underline;
+}
+
+#id_description
+{
+	height: 140px;
+}
+
+.wrapper
+{
+	margin-left: 139px;
+	margin-top: 10px;
+}
+
+.artists_field
+{
+	margin-bottom: 20px;
+	width: 318px;
+	height: auto;
+	background-color: #585858;
+	overflow: auto;
+	color: white;
+}
+
+.artists_field .add_event_artist_row
+{
+	height: 61px;
+	width: 298px;
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-right: 0px;
+	border-bottom-style: dashed;
+border-bottom-width: 1px;
+}
+
+.add_event_row, .add_ev_art_img_content, .add_ev_art_vid_content
+{
+	
+}
+.add_ev_art_vid_content
+{
+	overflow: auto;
+	margin-bottom: 10px;
+}
+
+.artists_field .add_event_artist_row .artist_image
+{
+	width:50px;
+	height:50px;
+	float:left;
+	background-color: #3C3C3C;
+	background-size: cover;
+}
+
+.artists_field .add_event_artist_row .artist_name
+{
+	font-family: "Fusion Sans Pro Greek Heavy","Fusion Sans Pro Heavy";
+	text-transform: uppercase;
+	font-size: 23px;
+	margin-top: 13px;
+	float: left;
+	margin-left: 8px;
+	color: white;
+	height: 30px;
+width: 160px;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+
+#artist_image_url 
+{
+	
+	float: left;
+width: 193px;
+}
+#artist_video_url
+{
+	
+	float: left;
+margin-left: 0px;
+width: 193px;
+}
+
+#add_video_url
+{
+	margin-top: 11px;
+}
+
+.add_ev_art_img_content
+{
+	height: 200px;
+margin-top: 20px;
+}
+
+label[for=artist_image_url], label[for=artist_video_url], label[for=add_event_artist_bio]
+{
+	display: block;
+	
+	font-weight: bold;
+	
+}
+
+label[for=artist_video_url]
+{
+	margin-top: 13px;
+}
+
+label[for=artist_image_url]
+{
+	margin-top: 17px;
+}
+
+.help_text
+{
+	margin-top: 5px;
+	display: block;
+}
+
+#add_image_url
+{
+margin-top: 11px;
+}
+#add_image_url, #add_video_url
+{
+	cursor: pointer;
+	margin-left: 5px;
+	height: 31px;
+	width: 98px;
+	font-size: 12px;
+	color: #CCCCCC;
+	border: 1px solid #333333;
+	background: #999999;
+	background: #45484d;
+	background: -moz-linear-gradient(top, #45484d 0%, #000000 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000));
+	background: -webkit-linear-gradient(top, #45484d 0%,#000000 100%);
+	background: -o-linear-gradient(top, #45484d 0%,#000000 100%);
+	background: -ms-linear-gradient(top, #45484d 0%,#000000 100%);
+	background: linear-gradient(top, #45484d 0%,#000000 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 );
+}
+
+#artist_results
+{
+	margin-top: 19px;
+}
+#add_another_artist_submit
+{
+	width: 50px;
+	height: 32px;
+}
+
+.user_info {
+	margin-top: 20px;
+}
+
+
+#add_another_artist_submit{
+	cursor: pointer;
+	
+	margin-left: -2px;
+	height: 33px;
+	width:58px;
+	font-size: 12px;
+	color:#CCCCCC;
+	border:1px solid #333333;
+	background: #999999; /* Old browsers */
+background: #45484d; /* Old browsers */
+background: -moz-linear-gradient(top,  #45484d 0%, #000000 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #45484d 0%,#000000 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%); /* IE10+ */
+background: linear-gradient(top,  #45484d 0%,#000000 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+	}
+
+#add_another_artist_submit.loading{
+
+	background-repeat: no-repeat;
+background-color: #333333;
+background-image: url("../icons/ajax-loader.gif");
+background-position: center;
+}
+
+.add_event_artist_buttoms
+{
+	
+	width: 67px;
+	float: right;
+}
+
+.remove_artist_row
+{
+	cursor: pointer;
+	height:25px;
+	width:60px;
+	font-size: 12px;
+	color:#CCCCCC;
+	border:1px solid #333333;
+	background: #999999; /* Old browsers */
+	background: #45484d; /* Old browsers */
+	background: -moz-linear-gradient(top,  #45484d 0%, #000000 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #45484d 0%,#000000 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%); /* IE10+ */
+	background: linear-gradient(top,  #45484d 0%,#000000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+	/*background-image:url(../icons/common.png);
+	height: 17px;
+	width: 16px;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-top: 15px;*/
+	float: right;
+	
+}
+
+.edit_artist_row
+{
+	
+	float: right;
+	cursor: pointer;
+	margin-top: 5px;
+	
+	height:25px;
+	width:60px;
+	font-size: 12px;
+	color:#CCCCCC;
+	border:1px solid #333333;
+	background: #999999; /* Old browsers */
+	background: #45484d; /* Old browsers */
+	background: -moz-linear-gradient(top,  #45484d 0%, #000000 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #45484d 0%,#000000 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%); /* IE10+ */
+	background: linear-gradient(top,  #45484d 0%,#000000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+
+.add_event_artist_box
+{
+	margin-top: 8px;
+	margin-right: 0px;
+	width: 298px;
+	margin-left: 11px;
+}
+
+.add_event_artist_box.close
+{
+	display: none;
+}
+
+.add_event_artist_box.open
+{
+	display: block;
+}
+
+.remove_artist_row:hover, .edit_artist_row:hover
+{
+	cursor:pointer;
+}
+.add_ev_art_img1, .add_ev_art_img2,.add_ev_art_img4, .add_ev_art_img5
+{
+	margin-right: 10px;
+}
+.add_ev_art_img4, .add_ev_art_img5, .add_ev_art_img6
+{
+	margin-top: 10px;
+}
+.add_ev_art_img1, .add_ev_art_img2, .add_ev_art_img3, .add_ev_art_img4, .add_ev_art_img5, .add_ev_art_img6
+{
+	width: 92px;
+	height: 92px;
+	float: left;
+	display: inline;
+	background-color: #6D6D6D;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+
+
+.add_ev_art_vid1, .add_ev_art_vid2, .add_ev_art_vid3, .add_ev_art_vid4
+{
+	margin-top: 20px;
+	
+	height: 200px;
+	width: 296px;
+	float: left;
+	display: inline;
+	background-color: #6D6D6D;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#remove_add_ev_art_img, #remove_add_ev_art_vid
+{
+	background-position-y: 0px;
+	background-position-x: -22px;
+	background-image: url(../icons/close_icon.png);
+	height: 23px;
+	width: 23px;
+		float: right;
+		cursor: pointer;
+		background-size: cover;
+		
+}
+#remove_add_ev_art_img:hover, #remove_add_ev_art_vid:hover
+{
+	background-position-y: 22px;
+	background-position-x: -22px;
+}
+
+#remove_add_ev_art_img
+{
+	margin-top: 5px;
+margin-right: 5px;
+}
+.add_ev_art_img_content .image_number
+{
+	margin-top: 28px;
+	margin-left: 37px;
+	font-size: 35px;
+}
+
+.add_ev_art_vid_content .video_number
+{
+	margin-top: 46px;
+margin-left: 132px;
+	font-size: 60px;
+}
+
+.add_ev_art_vid1 iframe, .add_ev_art_vid2 iframe, .add_ev_art_vid3 iframe, .add_ev_art_vid4 iframe
+{
+	height: 200px;
+	width: 296px;
+}
+
+#remove_add_ev_art_vid
+{
+	margin-left: 268px;
+position: absolute;
+margin-top: -191px;
+}
+#add_another_artst:hover{
+	cursor:pointer;
+	}
+
+#venue_form
+{
+	display: none;
+}
+
+#venue_form div:nth-child(2), #venue_form div:nth-child(3),#venue_form div:nth-child(4),#venue_form div:nth-child(5)
+{
+	margin-top: 11px;
+}
+#venue_autocomplete
+{
+	margin-left: 15px;
+width: 233px;
+padding-left: 15px;
+}
+#venue_nam{
+	margin-left: 49px;
+	width:350px;
+	}
+
+#venue_address{
+	margin-left: 38px;
+	width:350px;
+	}
+
+#venue_country{
+	margin-left: 38px;
+	width:350px;
+	}
+
+label[for=id_url], label[for=id_address], label[for=id_city],label[for=id_country],label[for=id_phone],label[for=id_capacity]
+{
+    height: 31px;
+	padding-top: 17px;
+	text-align: left;
+	float: left;
+	display: block;
+	width: 61px;
+}
+label[for=id_address], label[for=id_city], label[for=select_city]
+{
+	
+}
+/*select*/
+
+label[for=select_city]
+{
+	height: 14px;
+	padding-top: 17px;
+	text-align: left;
+	float: left;
+	display: block;
+	width: 61px;
+}
+
+
+#select_city
+{
+	width: 216px;
+	margin-top: 10px;
+	margin-left: 9px;
+	height: 30px;
+}
+
+/*
+#id_city,label[for=id_city]
+{
+	display:none;
+}
+ */
+ #id_name{
+	margin-left: 30px;
+width: 233px;
+padding-left: 15px;
+	}
+#id_url{
+	margin-left: 9px;
+width: 233px;
+padding-left: 15px;
+	}
+
+#id_address{
+	margin-left: 9px;
+width: 233px;
+padding-left: 15px;
+}
+
+#id_country{
+	width: 216px;
+margin-left: 1px;
+}
+
+#id_city
+{
+	margin-left: 9px;
+	display: none;
+width: 248px;
+}
+#id_phone, #id_capacity
+{
+	width: 216px;
+	margin-left: 1px;
+}
+#venue_capacity{
+	margin-left: 34px;
+	width:350px;
+	}
+
+#venue_phone{
+	margin-left: 50px;
+	width:350px;
+	}
+#venue_genre{
+	margin-left: 51px;
+	width:350px;
+	}
+
+.add_event_row.venue_fields
+{
+	margin-top: 20px;
+}
+#venue_info > .add_event_row
+{
+	line-height: 1.5;
+}
+
+#add_ev_venue_address, #add_ev_venue_country, #add_ev_venue_url, #add_ev_venue_phone, #add_ev_venue_city
+{
+	display: inline;
+	color: white;
+}
+
+label[for=add_ev_venue_address], label[for=add_ev_venue_country], label[for=add_ev_venue_url], label[for=add_ev_venue_phone]
+{
+	
+	display: inline;
+}
+
+#add_event_row_address
+{
+	display: inline;
+}
+
+#save_event{
+	
+	border:none;
+	width:200px;
+	height:35px;
+	background-image:url(../icons/save_event.jpg);
+	margin-top: 17px;
+	margin-bottom: 127px;
+	margin-right: 21px;
+
+}
+
+#save_event:hover{
+	cursor:pointer;}
+
+#results{
+
+    color: white;
+}
+
+#backgroundPopup{
+    display:none;
+    position:fixed;
+    /*_position:absolute;  hack for internet explorer 6*/
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    background:#000000;
+    background:url(../icons/overlay.png) repeat 0 0;
+    border:1px solid #cecece;
+    z-index:1;
+    }
+     #popupContact{
+    margin-left: 46px;
+    height: 58px;
+    margin-top: 151px;
+    display:none;
+    position:fixed;
+    /*_position:fixed;  hack for internet explorer 6
+    height:384px;
+    width:408px;
+    background:#FFFFFF;  edoo to xromaaaaaaa*/
+
+
+    border:2px solid #cecece;
+    z-index:2;
+    padding:12px;
+    font-size:13px;
+
+    }
+
+    #popupContactClose{
+    font-size:14px;
+    line-height:14px;
+    right:6px;
+    top:4px;
+    position:absolute;
+    color:white;
+    font-weight:700;
+    display:block;
+    cursor: pointer;
+    }
+
+.required_field
+{
+	color: red;
+	font-size: 16px;
+}
+
+.missing_field
+{
+	border-style: solid;
+	border-color: red;
+	border-width: 1px;
+}

@@ -1,0 +1,162 @@
+.thumb{
+	width:240px;
+	height:330px;
+	background-color:#242424;
+	position: absolute;
+	color:white;
+       display: none;
+       overflow: hidden;
+    
+       /*transition: height 0.3s;
+       -webkit-transition: height 0.3s;*/
+
+	}
+.thumb_town, .thumb_time, .thumb_venue, .thumb_entrance
+{
+	text-transform: capitalize;
+	color: white;
+}
+
+.thumb_date , .thumb_artist , .thumb_info , .thumb > span{
+	margin-left: 25px;
+	display: block;
+	}
+
+
+.thumb_date{
+	font-family:Helvetica, Arial, sans-serif;
+	font-size:14px;
+	margin-top: 25px;
+	margin-left: 25px;
+	}
+
+.thumb_artist{
+	text-transform: uppercase;
+	display: inline-block;
+	margin-right: 5px;
+	font-family: "Fusion Sans Pro Greek Heavy","Fusion Sans Pro Heavy";
+	font-size:27px;
+	margin-top: 14px;
+	}
+
+.thumb_info{
+	margin-top: 15px;
+	}
+
+
+.thumb .alert
+{
+	font-family: arial;
+	float: right;
+	bottom: 78px;
+	position: absolute;
+	font-size: 12px;
+	color: red;	
+	display: none;
+}
+
+.thumb .alert_text
+{
+	display: inline;
+	float: left;
+}
+
+.thumb .close_alert
+{
+	display: inline;
+	margin-left: 6px;
+}
+
+.thumb .attend.attend_active
+{
+	background-image: url(../icons/attend-active.png);
+}
+
+.thumb .attend{
+	width: 135px;
+	height: 50px;
+	background-image: url(../icons/attend.png);
+	margin-right: -2px;
+	float: right;
+	/*margin-top: 66px;*/
+	bottom: 30px;
+        position: absolute;
+
+right: 0px;
+}
+
+.thumb .attend:hover{
+	background-image:url(../icons/attnd-over.png);
+	cursor:pointer;
+	}
+
+.thumb .attend_number{
+	font-size: 20px;
+font-family: "Fusion Sans Pro Greek Heavy","Fusion Sans Pro Heavy";
+color: white;
+margin-left: 17px;
+margin-top: 12px;
+position: absolute;
+
+	}
+
+        .facebook_share, .twitter_share, .share{
+
+            position: absolute;
+}
+.posterWall .thumb .facebook_share{
+	background-image:url(../icons/facebook.png);
+	background-position:left;
+	background-repeat:no-repeat;
+	width: 11px;
+height: 22px;
+float: right;
+right: 40px;
+margin-top: 10px;
+bottom: 13px;
+}
+
+.posterWall .thumb .facebook_share:hover{
+	background-image:url(../icons/facebook-over.png);
+	cursor:pointer;}
+
+.posterWall .thumb .twitter_share{
+
+	background-image:url(../icons/twitter.png);
+	background-position:left;
+	background-repeat:no-repeat;
+	width: 11px;
+        margin-top: 10px;
+height: 22px;
+float: right;
+right: 20px;
+bottom: 12px;
+}
+
+
+.posterWall .thumb .twitter_share:hover{
+	background-image:url(../icons/twitter-over.png);
+	cursor:pointer;}
+
+
+/*
+.posterWall .thumb .share{
+	
+	background-image:url(../icons/pinterest.png);
+	background-position:left;
+        margin-top: 10px;
+	background-repeat:no-repeat;
+	background-size: cover;
+	width: 23px;
+height: 25px;
+float: right;
+right: 13px;
+bottom: 8px;
+	}
+*/
+/*
+.posterWall .thumb .share:hover{
+	
+	background-image:url(../icons/share-over.png);
+	cursor:pointer;}
+*/

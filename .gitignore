@@ -1,0 +1,15 @@
+*.pyc
+*.~
+.DS_Store
+.settings
+.project
+.pydevproject
+old_stuff
+FRONTEND
+nginxTornado
+minifier
+build
+.zip
+celerybeat-schedule
+yuicompressor.jar
+

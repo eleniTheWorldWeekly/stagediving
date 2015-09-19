@@ -1,0 +1,112 @@
+.thumb{
+	width:240px;
+	height:330px;
+	background-color:#242424;
+	position: absolute;
+	color:white;
+       display: none;
+       overflow: hidden;
+        
+	}
+.thumb_date , .thumb_artist , .thumb_info{
+	margin-top:24px;
+	margin-left:18px;
+        
+	}
+.thumb_date{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:16px;
+	}
+
+.thumb_artist{
+	font-family:"PFFusionSans Heavy";
+	letter-spacing: 1px;
+	font-size:27px;
+	}
+
+.thumb .attend{
+	width: 135px;
+	height: 50px;
+	background-image: url(../icons/attend.png);
+	margin-right: -1px;
+	float: right;
+	margin-top: 66px;
+        position: absolute;
+bottom: 39px;
+right: 0px;
+}
+
+.thumb .attend:hover{
+	background-image:url(icons/attnd-over.png);
+	cursor:pointer;
+	}
+
+.thumb .attend_number{
+	font-size: 20px;
+font-family: "PFFusionSans Heavy";
+color: white;
+margin-left: 17px;
+margin-top: 12px;
+position: absolute;
+
+	}
+
+        .facebook_share, .twitter_share, .share{
+            
+            position: absolute;
+}
+.posterWall .thumb .facebook_share{
+	background-image:url(icons/facebook.png);
+	background-position:left;
+	background-repeat:no-repeat;
+	width: 11px;
+height: 22px;
+float: right;
+right: 65px;
+margin-top: 10px;
+bottom: 11px;
+}
+
+.posterWall .thumb .facebook_share:hover{
+	background-image:url(icons/facebook-over.png);
+	cursor:pointer;}
+
+.posterWall .thumb .twitter_share{
+	
+	background-image:url(icons/twitter.png);
+	background-position:left;
+	background-repeat:no-repeat;
+	width: 11px;
+        margin-top: 10px;
+height: 22px;
+float: right;
+right: 39px;
+bottom: 10px;
+}
+
+
+.posterWall .thumb .twitter_share:hover{
+	background-image:url(icons/twitter-over.png);
+	cursor:pointer;}
+
+
+
+.posterWall .thumb .share{
+	
+	background-image:url(icons/share.png);
+	background-position:left;
+        margin-top: 10px;
+	background-repeat:no-repeat;
+	width: 16px;
+height: 25px;
+float: right;
+right: 13px;
+bottom: 8px;
+	}
+
+.posterWall .thumb .share:hover{
+	background-image:url(icons/share-over.png);
+	cursor:pointer;}
+
+

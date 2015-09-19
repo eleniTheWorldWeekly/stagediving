@@ -1,0 +1,120 @@
+.list_view_exp{
+	width: 950px;
+z-index: 100;
+background-color: #333;
+font-family: "PFFusionSans Heavy";
+color: white;
+font-size: 28px;
+padding-left: 20px;
+padding-right: 20px;
+padding-top: 16px;
+
+left: -750px;
+top: 0px;
+
+	}
+
+.list_view_conten{
+	margin-right:240px;
+	font-size:13px;
+	font-family:Tahoma, Geneva, sans-serif;
+	overflow-x: hidden;
+	}
+
+.list_view_menu{
+	height: 15px;
+width: 100%;
+padding-top: 15px;
+line-height: 14px;
+padding-bottom: 15px;
+	}
+
+
+.list_view_conten .poster_col{
+	float:left;
+	width:70px;
+	height:100px;
+	position: absolute;
+	}
+
+.list_view_conten .date_col{
+	float:left;
+	width:80px;
+	height:100px;
+	position: absolute;
+	left: 90px;
+	}
+
+.list_view_conten .artists_col{
+	float:left;
+	width:170px;
+	height:100px;
+	position: absolute;
+	left: 170px;
+	}
+
+.list_view_conten .city_time_venue_col{
+	float:left;
+	width:160px;
+	height:100px;
+	position: absolute;
+	left: 340px;
+	}
+
+
+.list_view_conten .entrance_col{
+	float:left;
+	width:70px;
+	height:100px;
+	position: absolute;
+	left: 500px;
+	}
+
+.list_view_conten .attend_col{
+	float:left;
+	width:70px;
+	height:100px;
+	position: absolute;
+	left: 590px;
+	}
+
+.list_view_exp .list_view_conten .item{
+	border-top:2px solid #999;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	height: 60px;
+
+	}
+
+.list_view_exp .list_view_conten .item .poster{
+	height:60px;
+	width:40px;
+	background-image:url(static/icons/default-poster.png);
+	-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;}
+
+.list_view_exp .list_view_conten .item .artist{
+	font-weight:bold;
+	}
+
+.list_view_exp .list_view_conten .item .city_time_venue_col .time , .list_view_exp .list_view_conten .item .city_time_venue_col .venue{
+	color:#999999;
+	}
+
+.list_view_exp .list_view_conten .item .attend{
+	width: 135px;
+height: 50px;
+background-image: url(static/icons/attend.png);
+
+	}
+
+.list_view_exp .list_view_conten .item .attend_number{
+	font-size: 20px;
+font-family: "PFFusionSans Heavy";
+color: white;
+margin-left: 17px;
+margin-top: 12px;
+position: absolute;
+	}

@@ -1,0 +1,657 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta property="og:title" content="event" />
+<meta property="og:type" content="musician" />
+<meta property="og:url" content="http://localhost:8084/final/main.html" />
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="Stage Diving" />
+<meta property="fb:admins" content="100002821370702" />
+<title>Stage Diving</title>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"> </script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>-->
+<script  src="{{ STATIC_URL }}js/jquery.min.js" type="text/javascript" ></script>
+<script type="text/javascript" src="http://swfobject.googlecode.com/svn/trunk/swfobject/swfobject.js"></script>
+<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script  src="{{ STATIC_URL }}js/menu.js" type="text/javascript" ></script>
+<script  src="{{ STATIC_URL }}js/expanded_menu.js" type="text/javascript" ></script>
+<script  src="{{ STATIC_URL }}js/main.js" type="text/javascript" ></script>
+<script  src="{{ STATIC_URL }}js/shares.js" type="text/javascript" ></script>
+<script  src="{{ STATIC_URL }}js/jquery.hoverIntent.js" type="text/javascript" ></script>
+<!--<script  src="{{ STATIC_URL }}js/poster_view.js" type="text/javascript" ></script>-->
+<script src="{{ STATIC_URL }}js/waypoints.js"></script>
+
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<link href="{{ STATIC_URL }}css/main.css" rel="stylesheet" type="text/css" />
+
+<link href="{{ STATIC_URL }}css/poster_hover.css" rel="stylesheet" type="text/css" />
+<link href="{{ STATIC_URL }}css/poster_view.css" rel="stylesheet" type="text/css" />
+<link href="{{ STATIC_URL }}css/expanded_menu.css" rel="stylesheet" type="text/css" />
+<link href="{{ STATIC_URL }}css/menu.css" rel="stylesheet" type="text/css" />
+<link href="{{ STATIC_URL }}css/list_view.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body >
+<div class="content">
+	<div class="menu">
+    <div class="top_menu">
+    	<div class="logo">
+
+		</div>
+        <div class="view">
+        <!--<div class="imageWall">
+        
+        </div>
+        <div class="wall_view">
+        Wall View
+        </div>
+
+        <div class="imageList" id="list_view_button">
+        
+        </div>
+        <div class="list_view">
+        List View
+        </div>
+
+        -->
+        <div class="wall_buttom">
+        <div class="imageWall"></div>
+        <div class="wall_view">Wall View</div>
+        </div>
+
+        <div class="list_buttom">
+        <div class="imageList" id="list_view_button"></div>
+        <div class="list_view">List View</div>
+        </div>
+        </div>
+        <div class="filter">
+       <!-- <hr />--><div id="concerts">CONCERTS</div> <!--<hr class="right" /></br>-->
+        <div class="inside_filter">
+       <!-- <input type="radio"  value="All" checked> All</br>
+		<input type="radio" value="Popular" > Popular</br>
+        <input type="radio" value="Recomended" > Recomended</br></br>-->
+        <div class="image_all"><div class="all">
+        All
+        </div>
+        </div>
+        
+
+         <div class="image_popular">
+             <div class="popular">
+        Popular
+        </div>
+        </div>
+        
+       <div class="image_recomended"> <div class="recomended">
+        Recomended
+        </div>
+        </div>
+       
+        </br>
+        <label class="from">From:</label> <label class="to">To:</label>
+        </br>
+        <input type="text" class="from_to from" id="from"/>
+
+		<input type="text" class="from_to to" id="to" /></br></br>
+     <div id="cities"> Cities (<span id="num_cities">5</span>):
+         <div id="display_cities">  Thessaloniki, Athens Larisa</div>
+         
+     </div>
+        </br>
+        <button class="track_cities_button">Track cities</button>
+        </div>
+        </div>
+
+
+		</div>
+        <div class="down_menu">
+			<div class="nav_buttons">
+            <div class="search_by_artist">Search by Artist
+            </div>
+            </div>
+            <div class="nav_buttons">
+            <div class="my_concerts">My Concerts
+            </div>
+            </div>
+            <div class="nav_buttons">
+            <div class="image_add_event"></div>
+            <div class="add_event">Add Event
+            </div>
+            </div>
+            <div class="nav_buttons">
+
+            <div class="image_login"></div>
+            <div class="login">
+            Login / Register
+
+            </div>
+            </div>
+
+<a href={% url socialauth_begin 'twitter' %}>...</a>
+
+            <div class="nav_buttons"><div class="aboutSD">About Stage Diving | Contact</div> </div>
+	</div>
+</div>
+
+<div class="wall">
+    <div class="wallContainer"></div>
+    <footer>  </footer>
+</div>
+
+<!--llist view  -->
+
+
+
+
+<div class="AboutSD expanded" id="AboutSD">
+
+   <h2> ABOUT STAGE DIVING </h2><span class="close"></span>
+   <hr  />
+
+
+</div>
+
+
+
+<div class="list_view_exp expanded" id="list_view_exp">
+
+<h2> LIST VIEW OF CONCERTS </h2><span class="close"></span>
+<div class="list_view_conten">
+<hr  />
+<div class="poster_col"></div>
+<div class="date_col"></div>
+<div class="artists_col"></div>
+<div class="city_time_venue_col"></div>
+<div class="entrance_col"></div>
+<div class="list_view_menu">
+	<div class="poster_col"> Poster</div>
+	<div class="date_col"> Date</div>
+	<div class="artists_col">Artists</div>
+	<div class="city_time_venue_col">City, Time & Venue</div>
+	<div class="entrance_col">Entrance</div>
+</div>
+<!--<div class="item">
+	<div class="poster poster_col"></div>
+    <div class="date date_col">22/11/2011</div>
+    <div class="artist artists_col">TZIMHS PANOUSHS</br>GIANNIS AGKELAKAS</div>
+    <div class="city_time_venue_col">
+    	<span class="city">Thessaloniki</span><br />
+        <span class="time">22:30</span><br />
+        <span class="venue">Principal Club Theater</span>
+    </div>
+    <div class="entrance entrance_col">€25</div>
+    <div class="attend attend_col">
+    <div class="attend_number">123</div>
+    </div>
+</div>-->
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="search_by-artist expanded" id="search_by-artist">
+<h2> SEARCH BY ARTISTS </h2><span class="close"></span>
+<hr  />
+<!--<input type="text" class="artist_field" value=" Search Artists" /> -->
+<fieldset class="artist">
+<input type="text" class="artist_field" value="Search Artists" id="search_by_artist_artist" />
+<input type="button" class="search" id="search_by_artist_button"/>
+</fieldset>
+<hr class="line"/>
+<div class="search_content" >
+
+<!--<div class="item">
+	<div class="poster">
+	</div>
+	<div class="info">
+	</div>
+</div>
+
+<div class="item">
+	<div class="poster">
+	</div>
+	<div class="info">
+
+    <span class="date">22/11/2011</br></span>
+	<span class="artist">TΖΙΜΗΣ ΠΑΝΟΥΣΗΣ</br></span>
+
+	<span class="place">Θεσσαλονίκη </br>
+	Principal Club Theater </span>
+	</div>
+    <div class="attend">
+    </div>
+</div>-->
+
+</div>
+</div>
+
+
+
+
+
+<div class="my_concerts_exp search_by-artist expanded" id="my_concerts_exp">
+<h2> MY CONCERTS </h2><span class="close"></span>
+<hr  />
+
+
+<div class="search_content" >
+<!--
+<div class="item">
+	<div class="poster">
+	</div>
+	<div class="info">
+	</div>
+</div>
+
+<div class="item">
+	<div class="poster">
+	</div>
+	<div class="info">
+
+    <span class="date">22/11/2011</br></span>
+	<span class="artist">TΖΙΜΗΣ ΠΑΝΟΥΣΗΣ</br></span>
+
+	<span class="place">Θεσσαλονίκη </br>
+	Principal Club Theater </span>
+	</div>
+    <div class="attend">
+    </div>
+</div>
+-->
+</div>
+</div>
+
+
+
+
+
+
+<div class="track_city expanded" id="track_city">
+<h2> TRACK CITIES </h2><span class="close"></span>
+<hr class="1" />
+<div class="left_cities">
+
+<div class="letter">
+A
+	<div class="city">
+		<div class="cities_buttom" id="Alexandroupoli">
+		</div>
+		<div class="city_name" >
+		Alexandroupoli
+		</div>
+	</div>
+
+	 <div class="city">
+		<div class="cities_buttom" id="Agrinio">
+		</div>
+		<div class="city_name"  >
+		Agrinio
+		</div>
+	</div>
+
+	<div class="city">
+		<div class="cities_buttom" id="Athens">
+		</div>
+		<div class="city_name" >
+		Athens
+		</div>
+	</div>
+
+ </div>
+ <div class="letter">
+    C
+    <div class="city">
+		<div class="cities_buttom" id="Chalcis">
+		</div>
+		<div class="city_name" >
+		Chalcis
+		</div>
+	</div>
+
+
+    <div class="city">
+		<div class="cities_buttom" id="Chania">
+		</div>
+		<div class="city_name" >
+		Chania
+		</div>
+	</div>
+   </div>
+
+
+
+ 	<div class="letter">
+
+   H
+   <div class="city">
+		<div class="cities_buttom" id="Heraklion">
+		</div>
+		<div class="city_name" >
+		 Heraklion
+		</div>
+	</div>
+
+   </div>
+
+
+
+   <div class="letter">
+
+   I
+   <div class="city">
+		<div class="cities_buttom" id="Ioanina">
+		</div>
+		<div class="city_name" >
+		Ioanina
+		</div>
+	</div>
+
+   </div>
+
+
+   <div class="letter">
+   K
+    <div class="city">
+		<div class="cities_buttom" id="Kalamata">
+		</div>
+		<div class="city_name" >
+		Kalamata
+		</div>
+	</div>
+
+
+     <div class="city">
+		<div class="cities_buttom" id="Katerini">
+		</div>
+		<div class="city_name" >
+		Katerini
+		</div>
+	</div>
+
+    <div class="city">
+		<div class="cities_buttom" id="Kavala">
+		</div>
+		<div class="city_name" >
+		Kavala
+		</div>
+	</div>
+
+    <div class="city">
+		<div class="cities_buttom" id="Kozani">
+		</div>
+		<div class="city_name" >
+		Kozani
+		</div>
+	</div>
+
+   </div>
+
+
+   <div class="letter">
+
+   L
+   <div class="city">
+		<div class="cities_buttom" id="Lamia">
+		</div>
+		<div class="city_name" >
+		Lamia
+		</div>
+	</div>
+
+
+  <div class="city">
+		<div class="cities_buttom" id="Larisa">
+		</div>
+		<div class="city_name" >
+		Larisa
+		</div>
+	</div>
+
+
+   </div>
+
+
+
+</div>
+
+
+
+
+<div class="right_cities">
+<div class="letter">
+P
+	<div class="city">
+		<div class="cities_buttom" id="Patras">
+		</div>
+		<div class="city_name" >
+		Patras
+		</div>
+	</div>
+
+</div>
+
+
+
+<div class="letter">
+R
+	<div class="city">
+		<div class="cities_buttom" id="Rhodes">
+		</div>
+		<div class="city_name" >
+		Rhodes
+		</div>
+	</div>
+
+</div>
+
+
+<div class="letter">
+S
+	<div class="city">
+		<div class="cities_buttom" id="Serres">
+		</div>
+		<div class="city_name" >
+		Serres
+		</div>
+	</div>
+
+</div>
+
+
+<div class="letter">
+T
+	<div class="city">
+		<div class="cities_buttom" id="Thessaloniki">
+		</div>
+		<div class="city_name" >
+		Thessaloniki
+		</div>
+	</div>
+
+    <div class="city">
+		<div class="cities_buttom" id="Trikala">
+		</div>
+		<div class="city_name" >
+		Trikala
+		</div>
+	</div>
+</div>
+
+
+<div class="letter">
+V
+	<div class="city">
+		<div class="cities_buttom" id="Veria">
+		</div>
+		<div class="city_name" >
+		Veria
+		</div>
+	</div>
+
+    <div class="city">
+		<div class="cities_buttom" id="Volos">
+		</div>
+		<div class="city_name" >
+		Volos
+		</div>
+	</div>
+</div>
+
+
+
+</div>
+
+</div>
+
+<div class="login_register expanded" id="login_register">
+<h2> LOGIN </h2><span class="close"></span>
+<hr class="1" />
+<div class="login">
+<button class="fb-login-button"><div class="icon"></div>Log in with Facebook</button>
+<form >
+<input type="text" id="login_username" value="Username"/>
+<input type="password" id="login_password" value="Password"/>
+<button id="login"> Login </button>
+
+</form>
+</br>
+<span id="pass_forgotten">Forgot password?</span>
+<div class="results">
+</div>
+<div class="register">
+Don't have an account yet?</br>
+Register now!
+</div>
+</div>
+
+</div>
+
+
+
+<!-- poster view-->
+
+<div class="poster_view">
+<div class="header content">
+
+<span class="left_anchor"></span>
+<span class="right_anchor"></span>
+<span class="close_poster_view" ></span>
+
+</div>
+
+
+<div class="main content">
+<div class="left">
+	<div class="poster">
+	</div>
+</div>
+<div class="right">
+	<div class="date">22/ 11/ 2011
+    </div></br>
+    <div class="artists">
+   <!-- FDGFDGDFG</br>
+    ΓΙΑΝΝΗΣ ΑΓΓΕΛΑΚΑΣ-->
+    </div>
+    <div class="poster_view_main_info">
+    Πόλη: <span id="poster_view_town">Thessaloniki</span>
+    </br>
+    Ώρα: <span id="poster_view_time">22:30</span>
+    </br>
+    Χώρος: <span id="poster_view_venue">Principal Club Theater</span>
+    </br>
+    Είσοδος: <span id="poster_view_entrance">€ 25</span>
+    </div>
+
+
+     <div class="attend">
+    <div class="attend_number">123</div>
+    </div>
+
+
+    <hr />
+    <div class="facebook_share"></div><div class="fac_lett">Facebook</div>
+    <div class="twitter_share"></div><div class="twit_lett">Twitter</div>
+    <div class="share"></div><div class="share_lett">Share</div>
+
+    <hr/>
+
+    <div class="venue_info">
+        <div class="venue_name">Principal Club Theater</div>
+        <span class="about">About Venue :</span></br>
+        <div class="info">I played cymbals. I played tenor drum. I played mellophone, French horn, trumpet, a little bit of clarinet and a little bit of snare. I got into music really by being in the marching band.</div>
+        <div class="map">
+        <div class="map_icon map_open" > </div>
+        <div class="fac_lett map_open" > Show Map</div>
+        <div class="map_canvas">
+        <div id="map_canvas" style="  width: 476px; height: 294px; float: right; margin-top:20px;"></div>
+       </div>
+        </div>
+    </div>
+
+
+   <hr/>
+   <div class="artists_details"></div>
+ <!--  <div class="artist_info">
+   <div class="venue_name " id="artist_name">TZIMIS PANOUSIS</div>
+   <span class="about" >Biography :</span> </br>
+   <div class="info" id="biography">I played cymbals. I played tenor drum. I played mellophone, French horn, trumpet, a little bit of clarinet and a little bit of snare. I got into music really by being in the marching band.</div>
+   </div>
+
+   <span class="about" >Images</span>
+   <div class="images">
+   <table cellspacing="20" style="margin-left: -20px; width:520px;">
+	<tr >
+  	<td  id="1"></td>
+  	<td  id="2"></td>
+ 	 <td  id="3"></td>
+	</tr>
+	<tr >
+  	<td id="4"></td>
+ 	<td id="5"></td>
+  	<td id="6"></td>
+	</tr>
+	</table>
+   </div>
+
+   <span class="about" >Videos</span>
+   <div class="videos">
+   <table cellspacing="20" style="margin-left: -20px; width:520px;">
+	<tr >
+  	<td  id="1"></td>
+  	<td  id="2"></td>
+	</tr>
+	<tr >
+  	<td id="3"></td>
+ 	<td id="4"></td>
+	</tr>
+	</table>
+   </div>
+   <hr/>-->
+    </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+</body>
+</html>

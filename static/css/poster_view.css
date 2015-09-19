@@ -1,0 +1,325 @@
+.poster_view{
+    z-index: 200;
+    display:none;
+    position: absolute;
+top: 0px;
+	margin-top:-8px;
+	margin-left:-8px;
+	width: 100%;
+	height:1800px;
+        
+	background-color:#0D0D0D;
+        
+	}
+.content .poster_view .content{
+        width: auto;
+	margin-right:200px;
+	margin-left:40px;
+	}
+
+.content .poster_view .header{
+        width: 960px;
+	height:70px;
+	border-bottom:#FFF solid 5px;
+        position: fixed;
+
+}
+
+.poster_view .close_poster_view {
+float: right;
+margin-top: 37px;
+margin-right: 20px;
+/*
+background-image:url(../../images/close_black.jpg);*/
+background-image:url(../icons/close.png);
+width: 22px;
+height: 21px;
+cursor: pointer;
+}
+.poster_view .close_poster_view:hover{
+    background-image:url(../icons/close-over.png);
+
+}
+
+.poster_view .left_anchor{
+	margin-left: 844px;
+	float: left;
+margin-top: 35px;
+margin-right: 3px;
+	background-image:url(../icons/previews.png);
+	width: 23px;
+height: 23px;
+cursor: pointer;
+background-repeat:no-repeat;
+	}
+.poster_view .right_anchor{
+	margin-left: 10px;
+	float: left;
+margin-top: 35px;
+margin-right: 0px;
+	background-image:url(../icons/next.png);
+	width: 23px;
+height: 23px;
+cursor: pointer;
+background-repeat:no-repeat;
+	}
+.poster_view .left_anchor:hover{
+	background-image:url(../icons/previews-over.png);
+	}
+
+.poster_view .right_anchor:hover{
+	background-image:url(../icons/next-over.png);
+	}
+
+.poster_view .close:hover{
+	background-image:url(../icons/close-over.png);
+	}
+.poster_view .main {
+	height: 100%;
+	}
+.poster_view .main .left{
+    margin-top: 96px;
+        position:fixed;
+	height:100%;
+	float:left;
+	width:480px;
+	}
+
+.poster_view .main .right{
+    margin-top: 96px;
+	height:100%;
+	float:right;
+	width:480px;
+        margin-left: 480px;}
+
+.poster_view .main .left .poster{
+	margin-left:3px;
+	margin-right:15px;
+	height:600px;
+	background:url(../icons/default_poster.jpg) no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	}
+
+.poster_view .main .right .date {
+	font-family:"PFFusionSans Heavy";
+
+	color:#F00;
+	font-size: 21px;
+/*letter-spacing: 1px;*/
+}
+
+.poster_view .main .right .artists, .add_event .main .right .title{
+	font-family:"PFFusionSans Heavy";
+	/*font-family:"Fusion Sans Pro Heavy";*/
+	font-weight:bold;
+	font-size: 40px;
+	color:#FFF;
+	margin-bottom: 13px;
+	letter-spacing: 2px;
+}
+.poster_view .main .right .poster_view_main_info, .thumb_info{
+line-height: 17px;
+font-size: 13px;
+color: #999;
+font-family: Arial, Helvetica, sans-serif;
+letter-spacing: 0.9px;
+font-weight:100;
+}
+
+.poster_view .main .right .poster_view_main_info > span, .thumb_info > span{
+	color:#FFF;
+	}
+
+/*.poster_view .main .right .attend{
+	width: 100px;
+height: 50px;
+background-image:url(../../images/attend_white.jpg);
+margin-left: 43px;
+background-repeat: no-repeat;
+margin-top: -38px;
+padding-top: 1px;
+font-size: 20px;
+font-family: "PFFusionSans Heavy";
+color: #3333333;
+	}
+.poster_view .main .right .attend .text{
+margin-top: 9px;
+margin-left: 12px;
+letter-spacing: 1px;
+}
+
+.poster_view .main .right .attend_number{
+	width: 42px;
+height: 37px;
+background-image:url(../../images/attend_number.jpg);
+padding-top: 1px;
+background-repeat: no-repeat;
+margin-top: 19px;
+
+font-size: 20px;
+font-family: "PFFusionSans Heavy";
+color: white;
+	}
+
+.poster_view .main .right .attend_number .number{
+margin-top: 9px;
+margin-left: 9px;
+letter-spacing: 1px;
+}
+*/
+
+.poster_view .main .right .attend{
+	margin-top: 20px;
+	margin-left: -7px;
+	width: 135px;
+	height: 50px;
+	background-image:url(../icons/attend.png);
+}
+.poster_view .main .right .attend .attend_number{
+	font-size: 20px;
+	font-family: "PFFusionSans Heavy";
+	color: white;
+	margin-left: 17px;
+	margin-top: 12px;
+	position: absolute;
+	}
+.poster_view .main .right > hr, .poster_view .main .right .artists_details > hr{
+        float: none;
+height: auto;
+margin-top: 10px;
+width: auto;
+	border-color: #999;}
+
+.poster_view .main .right .facebook_share{
+	background-image:url(../icons/facebook.png);
+	background-position:left;
+	background-repeat:no-repeat;
+	width: 11px;
+height: 22px;
+}
+.poster_view .main .right .facebook_share:hover{
+	background-image:url(../icons/facebook-over.png);
+	cursor:pointer;}
+.poster_view .main .right .fac_lett{
+	color:white;
+	margin-left: 20px;
+margin-top:-18px;
+
+	}
+
+.poster_view .main .right .twitter_share{
+	margin-top: -20px;
+margin-left: 115px;
+	background-image:url(../icons/twitter.png);
+	background-position:left;
+	background-repeat:no-repeat;
+	width: 11px;
+height: 22px;
+}
+
+.poster_view .main .right .twitter_share:hover{
+	background-image:url(../icons/twitter-over.png);
+	cursor:pointer;}
+
+.poster_view .main .right .twit_lett{
+	margin-top: -20px;
+margin-left: 137px;
+color: white;
+}
+
+.poster_view .main .right .share{
+	margin-top: -23px;
+margin-left: 215px;
+	background-image:url(../icons/share.png);
+	background-position:left;
+	background-repeat:no-repeat;
+	width: 16px;
+height: 25px;
+	}
+.poster_view .main .right .share:hover{
+	background-image:url(../icons/share-over.png);
+	cursor:pointer;}
+
+.poster_view .main .right .share_lett{
+	margin-top: -22px;
+margin-left: 241px;
+color: white;
+	}
+.poster_view .main .right .venue_info{
+overflow: hidden;
+height:auto;
+
+}
+.poster_view .main .right .venue_name{
+	font-family: "PFFusionSans Heavy";
+font-weight: bold;
+font-size: 25px;
+color: white;
+text-transform:uppercase;
+margin-top: 16px;
+margin-bottom: 16px;
+	}
+
+.poster_view .main .right  .about{
+	color:#999999;
+	}
+.poster_view .main .right .info{
+	color:white;
+	margin-bottom: 30px;}
+
+.poster_view .main .right .venue_info .map .map_icon{
+	background-image:url(../icons/map.png);
+	background-repeat:no-repeat;
+	width: 13px;
+height: 18px;}
+
+.poster_view .main .right .venue_info .map .map_icon:hover{
+	cursor:pointer;
+	background-image:url(../icons/map-over.png);
+	}
+
+.poster_view .main .right .venue_info .map {
+	cursor:pointer;
+	margin-bottom: 20px;
+	}
+
+.map_canvas{
+	overflow: hidden;
+	height:0px;
+	-webkit-transition:height 1s ease-in;
+   -moz-transition:height 1s ease-in;
+   -o-transition:height 1s ease-in;
+   transition:height 1s ease-in; }
+
+  .poster_view .main .right .artist_info #artist_name{
+	  margin-top:23px}
+.images{
+	padding-bottom: 20px;
+	}
+ .images tr{
+	 height:90px;
+	 }
+.images td{
+	background-image:url(../icons/default-poster.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	 width:140px;
+	 -moz-background-size: cover;
+	-o-background-size: cover;
+	 -webkit-background-size: cover;
+	 background-size: cover;
+	 border:#999999 1px solid;
+	 }
+.images td:hover{
+
+	border-color:#F00;}
+ .videos tr{
+        
+	 height:140px;
+	 }
+.videos td{
+	background-color:#333333;
+	width:220px;}

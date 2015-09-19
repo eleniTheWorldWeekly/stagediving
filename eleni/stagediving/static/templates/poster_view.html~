@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"> </script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/separate_poster_view.js"></script>
+<script type="text/javascript" src="http://swfobject.googlecode.com/svn/trunk/swfobject/swfobject.js"></script>
+
+<link href="{{ STATIC_URL }}css/poster_view2.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body >
+
+<div id="poster_view">
+<div id="header">
+
+
+<span id="close_poster_view" ></span>
+
+</div>
+
+
+<div id="main">
+<div id="left">
+	<div id="poster">
+	</div>
+</div>
+<div id="right">
+	<div class="date">{{event.on_date|date:"D d M Y"}}
+    </div></br>
+    <div class="artists">
+
+    </div>
+    <div id="poster_view_main_info">
+    Πόλη: <span id="poster_view_town">{{event.venue.city}}</span>
+    </br>
+    Ώρα: <span id="poster_view_time">{{event.on_date|date:"H i"}}</span>
+    </br>
+    Χώρος: <span id="poster_view_venue">{{event.venue.name}}</span>
+    </br>
+    Είσοδος: <span id="poster_view_entrance">{{event.price|floatformat:"-3"}}</span>
+    </div>
+
+
+     <div id="attend">
+    <div id="attend_number">0</div>
+    </div>
+
+
+    <hr />
+    <div id="facebook"><div id="facebook_share"></div><div class="fac_lett">Facebook</div></div>
+    <div id="twitter"><div id="twitter_share"></div><div id="twit_lett">Twitter</div></div>
+    <div id="google"><div id="share"></div><div id="share_lett">Share</div></div>
+
+    <hr/>
+
+    <div id="venue_info">
+        <div class="venue_name">{{event.venue.name}}</div>
+        <div class="venue_name">telika ipirxe etimi i pliroforia, den exeis para na xrhsimopoihseis event.venue.WHATEVER mesa se tags , opou whatever ena apo ta attributes tu venue (name, address, phone etc) </div>
+        <!--<span class="about">About Venue :</span></br>
+        <div id="info">I played cymbals. I played tenor drum. I played mellophone, French horn, trumpet, a little bit of clarinet and a little bit of snare. I got into music really by being in the marching band.</div>-->
+        <div id="map">
+        <div id="map_icon" class="map_open" > </div>
+        <div class="fac_lett map_open" > Show Map</div>
+        <div class="map_canvas">
+        <div id="map_canvas" style="  width: 476px; height: 294px; float: right; margin-top:20px;"></div>
+       </div>
+        </div>
+    </div>
+
+
+   <hr/>
+   <div class="artists_details"></div>
+<p class="venue_name"> your artists go here </p>
+    {% for artist in event.artists.all %}
+      <p class="venue_name"> {{artist}} </p>
+    {% endfor %}
+  
+
+    </div>
+</div>
+
+</div>
+
+</body>
+</html>

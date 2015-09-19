@@ -1,0 +1,493 @@
+@font-face {
+font-family: PFFusionSans Heavy;
+src: url(PFFusionSansHeavy.ttf);
+}
+
+@font-face {
+font-family: PFFusionSans Light;
+src: url(PFFusionSans Light.ttf);
+}
+
+@font-face {
+font-family: PFFusionSans Medium;
+src: url(PFFusionSans Medium.ttf);
+}
+
+
+
+html, body {
+height: 100%;
+}
+
+body{
+
+    width: 100%;
+    height: auto !important;
+height: 100%;
+min-height: 100%;
+margin: 0;
+padding: 0;
+background-color: #0D0D0D;
+
+}
+
+a
+{
+	color: red;
+}
+#poster_view{
+	position: relative;
+	overflow: auto;
+	width: 100%;
+	height: auto;
+	background-color:#0D0D0D;
+	}
+
+
+#header{
+    z-index: 199;
+background-color: #0D0D0D;
+    position: fixed;
+	height:70px;
+	border-bottom:#FFF solid 5px;
+/*-webkit-box-shadow: 1px 20px 7px rgba(50, 50, 50, 0.7);
+-moz-box-shadow:    1px 20px 7px rgba(50, 50, 50, 0.7);
+box-shadow:         1px 20px 7px rgba(50, 50, 50, 0.7);
+*/
+}
+
+.close {
+float: right;
+margin-top: 37px;
+margin-right: 20px;
+/*
+background-image:url(../../images/close_black.jpg);*/
+background-image:url(../icons/close.png);
+width: 22px;
+height: 21px;
+cursor: pointer;
+}
+
+#close_poster_view {
+float: right;
+margin-top: 37px;
+margin-right: 20px;
+background-image: url(../icons/close.png);
+width: 22px;
+height: 21px;
+cursor: pointer;
+}
+
+#poster_view #close_poster_view:hover{
+    background-image:url(../icons/close-over.png);
+
+}
+
+#poster_view .left_anchor{
+	margin-left: 844px;
+	float: left;
+margin-top: 35px;
+margin-right: 3px;
+	background-image:url(../icons/previews.png);
+	width: 23px;
+height: 23px;
+cursor: pointer;
+background-repeat:no-repeat;
+	}
+#poster_view .right_anchor{
+	margin-left: 10px;
+	float: left;
+margin-top: 35px;
+margin-right: 0px;
+	background-image:url(../icons/next.png);
+	width: 23px;
+height: 23px;
+cursor: pointer;
+background-repeat:no-repeat;
+	}
+#poster_view .left_anchor:hover{
+	background-image:url(../icons/previews-over.png);
+	}
+
+#poster_view .right_anchor:hover{
+	background-image:url(../icons/next-over.png);
+	}
+
+#poster_view .close:hover{
+	background-image:url(../icons/close-over.png);
+	}
+#main {
+	height: 100%;
+    	margin-top: 96px;
+	overflow: auto;
+	}
+#left{
+ 
+	height:100%;
+	float:left;
+	width:37%;
+	}
+
+
+.sticky-wrapper
+{
+	float: left;
+}
+
+#right{
+	overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+	height:100%;
+	float:right;
+	width:46%;
+        }
+
+div#main div#right .date
+{
+	color: red;
+	font-family: "Fusion Sans Pro Greek Heavy","Fusion Sans Pro Heavy";
+font-size: 18px;
+}
+
+#venue_address , #venue_city, #venue_country
+{
+	display: none;
+}
+
+#event_poster
+{
+	display: none;
+}
+#poster{
+	width: 100%;
+	background:url(../icons/default_poster.jpg) no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	}
+
+#poster_view #main #right #date {
+	font-family:"Fusion Sans Pro Greek Heavy","Fusion Sans Pro Heavy";
+
+	color:#F00;
+	font-size: 21px;
+/*letter-spacing: 1px;*/
+}
+
+#poster_view #main #right .artists, #title{
+	font-family:"Fusion Sans Pro Greek Heavy","Fusion Sans Pro Heavy";
+	font-weight:bold;
+	color:#FFF;
+	margin-bottom: 7px;
+	letter-spacing: 2px;
+	margin-top: 10px;
+	font-size: 36px;
+	text-transform:uppercase;
+	line-height: 1.2;
+}
+
+
+
+
+#poster_view #main #right #poster_view_main_info, .thumb_info{
+line-height: 19px;
+font-size: 13px;
+color: #999;
+letter-spacing: 0.9px;
+font-weight:100;
+}
+
+
+#poster_view_town, #poster_view_time, #poster_view_venue, #poster_view_time, #poster_view_entrance
+{
+
+	color: white;
+}
+
+#poster_view #main #right #
+ > span, .thumb_info > span{
+	color:#FFF;
+	}
+
+/*#poster_view .main .right .attend{
+	width: 100px;
+height: 50px;
+background-image:url(../../images/attend_white.jpg);
+margin-left: 43px;
+background-repeat: no-repeat;
+margin-top: -38px;
+padding-top: 1px;
+font-size: 20px;
+font-family: "PFFusionSans Heavy";
+color: #3333333;
+	}
+.poster_view .main .right .attend .text{
+margin-top: 9px;
+margin-left: 12px;
+letter-spacing: 1px;
+}
+
+.poster_view .main .right .attend_number{
+	width: 42px;
+height: 37px;
+background-image:url(../../images/attend_number.jpg);
+padding-top: 1px;
+background-repeat: no-repeat;
+margin-top: 19px;
+
+font-size: 20px;
+font-family: "PFFusionSans Heavy";
+color: white;
+	}
+
+.poster_view .main .right .attend_number .number{
+margin-top: 9px;
+margin-left: 9px;
+letter-spacing: 1px;
+}
+*/
+
+#poster_view #main #right #attend{
+	margin-top: 11px;
+	margin-left: -7px;
+	width: 135px;
+	height: 50px;
+	background-image:url(../icons/attend.png);
+}
+#poster_view #main #right #attend #attend_number{
+	font-size: 20px;
+	font-family: "Fusion Sans Pro Greek Heavy","Fusion Sans Pro Heavy";
+	color: white;
+	margin-left: 17px;
+	margin-top: 12px;
+	position: absolute;
+	}
+
+
+#poster_view #main #right #shares
+{
+	font-size: 13px;
+	letter-spacing: 0.9px;
+	border-top: 1px solid #999;
+	border-bottom:1px solid #999;
+	height: 48px;
+	margin-top: 10px;
+}
+
+#poster_view #main #right > hr, #poster_view #main #right .artists_details> hr{
+
+	border-color: #999;}
+
+#poster_view #main #right #facebook{
+	margin-top: 11px;
+    width: 85px;
+    cursor: pointer;
+}
+
+#poster_view #main #right #twitter{
+	margin-top: 5px;
+    margin-left: 115px;
+    cursor: pointer;
+    width: 75px;
+}
+
+#poster_view #main #right #google{
+	margin-top: 4px;
+    margin-left: 215px;
+    cursor: pointer;
+    width: 75px;
+}
+#poster_view #main #right  #facebook_share{
+	background-image:url(../icons/facebook.png);
+	background-position:left;
+	background-repeat:no-repeat;
+	width: 11px;
+height: 22px;
+}
+#poster_view #main #right #facebook_share:hover{
+	background-image:url(../icons/facebook-over.png);
+	cursor:pointer;}
+#poster_view #main #right .fac_lett{
+	color:white;
+	margin-left: 20px;
+margin-top:-18px;
+
+	}
+
+#poster_view #main #right #twitter_share{
+	margin-top: -23px;
+	background-image:url(../icons/twitter.png);
+	background-position:left;
+	background-repeat:no-repeat;
+	width: 11px;
+height: 22px;
+}
+
+#poster_view #main #right #twitter_share:hover{
+	background-image:url(../icons/twitter-over.png);
+	cursor:pointer;}
+
+#poster_view #main #right #twit_lett{
+	margin-top: -20px;
+margin-left: 19px;
+color: white;
+}
+
+#poster_view #main #right #share{
+	margin-top: -23px;
+
+	background-image:url(../icons/share.png);
+	background-position:left;
+	background-repeat:no-repeat;
+	width: 16px;
+height: 25px;
+	}
+#poster_view #main #right #share:hover{
+	background-image:url(../icons/share-over.png);
+	cursor:pointer;}
+
+#poster_view #main #right #share_lett{
+	margin-top: -22px;
+margin-left: 26px;
+color: white;
+	}
+#poster_view #main #right #venue_info{
+overflow: hidden;
+height:auto;
+margin-top: 13px;
+
+}
+#poster_view #main #right .venue_name{
+	font-family: "Fusion Sans Pro Greek Heavy","Fusion Sans Pro Heavy";
+font-size: 24px;
+color: white;
+text-transform:uppercase;
+margin-bottom: 15px;
+	}
+
+#poster_view #main #right  .about{
+	color:#999999;
+	}
+#poster_view #main #right .info{
+	font-size: 13px;
+	font-family: Arial, Helvetica, sans-serif;
+	color:white;
+	}
+
+#poster_view #main #right #venue_info #map #map_icon{
+	background-image:url(../icons/map.png);
+	background-repeat:no-repeat;
+	width: 13px;
+height: 18px;}
+
+#poster_view #main #right #venue_info #map #map_icon:hover{
+	cursor:pointer;
+	background-image:url(../icons/map-over.png);
+	}
+
+#poster_view #main #right #venue_info #map {
+	cursor:pointer;
+	margin-bottom: 20px;
+	font-size: 13px;
+	}
+
+.map_canvas{
+	overflow: hidden;
+	height:0px;
+	-webkit-transition:height 1s ease-in;
+   -moz-transition:height 1s ease-in;
+   -o-transition:height 1s ease-in;
+   transition:height 1s ease-in; }
+
+
+
+.artists_details, .videos
+{
+	overflow-x: hidden;
+    overflow-y: auto;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+
+.artist_info
+{
+	margin-bottom: 20px;
+	margin-top: 15px;
+
+}
+
+.images{
+	padding-bottom: 20px;
+	height: auto;
+	margin-top: 20px;
+
+	}
+	/*
+ .images tr{
+	 height:90px;
+	 }
+.images td{
+	background-image:url(../icons/default-poster.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	 width:140px;
+	 -moz-background-size: cover;
+	-o-background-size: cover;
+	 -webkit-background-size: cover;
+	 background-size: cover;
+	 border:#999999 1px solid;
+	 }
+.images td:hover{
+
+	border-color:#F00;}
+	*/
+
+
+	.image_col
+	{
+		margin-left: 0px;
+		margin-right: 0px;
+		display: inline;
+		float: left;
+		width: 140px;
+	}
+ .images .image{
+	 height:90px;
+	 }
+.images .image{
+	margin-bottom: 20px;
+	background-image:url(../icons/default-poster.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	 width:140px;
+	 -moz-background-size: cover;
+	-o-background-size: cover;
+	 -webkit-background-size: cover;
+	 background-size: cover;
+	 border:#999999 1px solid;
+	 }
+.images .image:hover{
+
+	border-color:#F00;}
+
+.videos{
+	margin-top: 20px;
+
+}
+
+.video_box
+{
+	width: 236px;
+	margin-bottom: 20px;
+	float: left;
+	border: 1px solid #999999;
+}
+
+.video_box:hover
+{
+
+	border-color:#F00;
+
+}

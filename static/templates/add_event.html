@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>-->
+
+<script  src="js/jquery.min.js" type="text/javascript" ></script>
+<script  src="js/add_event.js" type="text/javascript" ></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<link href="css/poster_view2.css" rel="stylesheet" type="text/css" />
+<link href="css/add_event.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div class="add_event poster_view">
+<div class="header content">
+<span class="close"></span>
+</div>
+<div class="main content">
+	<div class="left">
+          <div id="popupContact"  >
+          <a id="popupContactClose">x</a>
+          <iframe name=hole width=0 height=0 style="visibility:hidden"></iframe>
+        <form id="uploadPhoto" action="UploadPoster" enctype="multipart/form-data" method="POST" target=hole>
+        <input  type="file" id="add_e_poster" name="file1" value="poster" />
+        
+        <input  type="Submit" value="Upload Fhoto" id="submitPoster"/>
+        
+        </form>
+
+      </div>
+      <div id="backgroundPopup"></div>
+    <div class="poster" style="background-image:none;background-color:#333333;">
+       <!-- <iframe name=hole width=0 height=0 style="visibility:hidden"></iframe>
+        <form id="uploadPhoto" action="UploadPoster" enctype="multipart/form-data" method="POST" target=hole>
+        <input  type="file" id="add_e_poster" name="file1" value="poster" />
+        <div class="add_poster">
+        <input class="add_poster" type="Submit" value="Upload Fhoto" style="opacity: 0;"/>
+        </div>
+        </form>-->
+       <button class="add_poster" ></button>
+        <div class="add_poster_let">Add poster of event</div>
+	</div>
+	</div>
+    <div class="right">
+    <div class="title">ADD EVENT</div>
+    <div class="data">
+    Date:
+    <input type="text" class="field date" id="add_e_date" /></br>
+    Time:
+    <input type="text" class="field time" id="add_e_time" value="22:00" /></br>
+    Town:
+    <input type="text" id="add_e_town" class="field town" value="Thessaloniki"/></br>
+    Entrance:
+    <input type="text" class="field entrance" id="add_e_entrance" value="0"/> €</br>
+    <hr/>
+    Artists</br>
+     <input type="text" class="field artist" id='add_e_artist1'/>
+     <input type="text" class="field artist" id='add_e_artist2'/>
+     <input type="text" class="field artist" id='add_e_artist3'/></br>
+     <button class="add_another_artst">Add another artist</button>
+
+     <hr/>
+     Venue:
+    <input type="text" class="field venue_nam" id="add_e_venue_nam"/></br>
+    Address:
+    <input type="text" class="field venue_address" id="add_e_venue_address"/></br>
+    Country:
+    <input type="text" class="field venue_country" id="add_e_venue_country"/></br>
+    Capacity:
+     <input type="text" class="field venue_capacity" id="add_e_capacity"/></br>
+     Url:
+     <input type="text" class="field venue_url" id="add_e_venue_url"/></br>
+     Phone:
+      <input type="text" class="field venue_phone" id="add_e_phone"/></br>
+      Genre:
+       <input type="text" class="field venue_genre" id="add_e_venue_genre"/></br>
+       <hr/>
+    </div>
+    <button class="save_event"></button>
+    </br>
+    </br>
+    <div id="results"></div>
+	</div>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,406 @@
+#top_menu{
+	height: 375px;
+	background-color:#000;
+	padding-left: 20px;
+padding-right: 20px;
+	}
+
+#logo{
+	letter-spacing: 2px;
+font-size: 42px;
+	margin-top: 24px;
+	height: 60px;
+	font-family: "Fusion Sans Pro Greek Heavy","Fusion Sans Pro Heavy";
+	cursor: pointer;
+	/*background-image: url(../icons/logo2.jpg);
+
+	background-repeat:no-repeat;*/
+	}
+#logo #stage
+{
+	color: #ffffff;
+}
+
+#logo #diving
+{
+	color: #ED1C24;
+}
+#view {
+	
+	margin-top: 15px;
+	height: 30px;
+	margin-bottom: -13px;
+	font-size: 14px;
+	display: block;
+
+	}
+        .wall_buttom{
+            width: 45%;
+            cursor: pointer;
+}
+#list_buttom{
+       display: inline;
+margin-top: -13px;
+margin-left: 120px;
+cursor: pointer;
+float: left;
+}
+#wall_view{
+	float: left;
+display: inline;
+margin-left: 19px;
+margin-top: -16px;
+color: #FFF;
+	}
+
+#imageWall{
+	background-repeat:no-repeat;
+	background-image:url(../icons/wall_view_white.jpg);
+	background-image:url(../icons/wall-view-over.png);
+
+	width: 13px;
+	height: 13px;
+	}
+
+
+
+/*#imageWall:hover{
+
+	background-image:url(../icons/wall-view.png);
+	cursor:pointer;
+	}
+#imageList:hover{
+	background-image:url(../icons/list_view_white.gif);
+	cursor:pointer;
+	} */
+
+#imageList{
+	background-repeat:no-repeat;
+	background-image:url(../icons/list_view_1.jpg);
+
+	width: 13px;
+	height: 13px;
+
+	}
+hr{
+	margin-top: 0;
+	float:left;
+	color:red;
+	height:0.7px;
+	width:50px;
+
+	}
+
+hr.right{
+	margin-top: 0;
+	float:right;
+
+	height:0.7px;
+	width:50px;
+
+	}
+
+#concerts
+{
+	margin-left: 59px;
+    margin-top: -11px;
+    position: absolute;
+	font-family:"Fusion Sans Pro Greek Heavy","Fusion Sans Pro Heavy";
+	letter-spacing:1px;
+	font-size:21px;
+	background-color:#000;
+	width: 100px;
+	margin-left: 51px;
+	text-align: center;
+	}
+#list_view{
+
+	margin-top: -16px;
+        margin-left: 19px;
+	}
+#filter{
+	margin-top: 24px;
+	height: 267px;
+
+	border-bottom:2px solid #333333;
+	border-left:2px solid #333333;
+	border-right:2px solid #333333;
+	border-top:2px solid #333333;
+	}
+
+
+#inside_filter{
+        color: #CCC;
+font-family: Helvetica, Arial, sans-serif;
+font-size: 12px;
+	margin:10px;
+	margin-bottom:20px;
+	padding-top: 10px;
+	}
+
+#all,#popular,#recomended{
+	font-size:12px;
+	/*margin-top: -14px;*/
+	margin-left: 26px;
+        bottom: -1px;
+position: relative;
+	}
+#image_all{
+	background-image:url(../icons/selected.jpg);
+	background-repeat:no-repeat;
+	background-position:left;
+	width: 15px;
+	height: 15px;
+	cursor:pointer;}
+
+#image_recomended
+{
+	background-image:url(../icons/no_selected.jpg);
+	background-repeat:no-repeat;
+	background-position:left;
+	width: 15px;
+	height: 15px;
+	margin-top: 14px;
+	cursor:pointer;
+	
+}
+#image_popular{
+	background-image:url(../icons/no_selected.jpg);
+	background-repeat:no-repeat;
+	background-position:left;
+	width: 15px;
+	height: 15px;
+	margin-top: 12px;
+	cursor:pointer;
+	}
+.from_to{
+	font-weight:200;
+	font-size:12px;
+	font-family:Helvetica, Arial, sans-serif;
+	text-align: center;
+	width:85px;
+	height:29px;
+	background-color: #CCC;
+	/*box-shadow: 0 8px 5px -6px black inset;*/
+	border: black solid 1px;
+	margin-top: 7px;
+	float:left;
+	}
+
+.from_to:hover{
+        border:#F00 solid 1px;
+	/*-moz-box-shadow: 1px 1px 5px #ED1C24;
+	-webkit-box-shadow: 1px 1px 5px #ED1C24;
+        box-shadow: 1px 1px 5px #ED1C24;*/
+	cursor:pointer;
+	
+	}
+.to{
+	float:right;
+	}
+label.to{
+
+	margin-right: 69px;}
+label.to,label.from{
+
+	font-size:12px;}
+/*input[type=radio] {content:url(mycheckbox.png)}
+input[type=radio]:checked {content:url(mycheckbox.png)}
+*/
+
+
+
+.filter_dates
+{
+	margin-left: -2px;
+	overflow: auto;
+height: auto;
+margin-top: 20px;
+}
+#track_cities_button{
+	margin-top: 3px;
+    cursor: pointer;
+	margin-left: 0px;
+	height:40px;
+	width:176px;
+	font-weight:100;
+	color:white;
+	border:1px solid #333333;
+	top: 331px;
+	
+	background: #999999; /* Old browsers */
+background: #45484d; /* Old browsers */
+background: -moz-linear-gradient(top,  #45484d 0%, #000000 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #45484d 0%,#000000 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%); /* IE10+ */
+background: linear-gradient(top,  #45484d 0%,#000000 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+
+	}
+	#track_cities_button:hover{
+	/*-moz-background: #999999;
+	-webkit-background: #999999;
+        background: #999999;
+		cursor:pointer;*/
+		background: #666666; /* Old browsers */
+		background: -moz-linear-gradient(top,  #666666 44%, #393939 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(44%,#666666), color-stop(100%,#393939)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #666666 44%,#393939 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #666666 44%,#393939 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #666666 44%,#393939 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  #666666 44%,#393939 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#393939',GradientType=0 ); /* IE6-9 */
+
+	}
+        #display_cities{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 115px;
+float: right;
+margin-top: 0px;
+
+}
+
+.filter_cities
+{
+	margin-top: 18px;
+}
+#cities{
+    margin-bottom: 5px;
+        overflow-y: hidden;
+height: 16px;
+width: 171px;
+	font-size:12px;
+	}
+	
+#cities_num
+{
+	float: left;
+}
+.nav_buttons{
+	color:#FFFFFF;
+	font-weight:100;
+	height:50px;
+	border:1px solid #333333;
+	padding-left:20px;
+
+
+	}
+
+.nav_buttons:hover{
+	-moz-background: rgb(51, 51, 51);
+	-webkit-background: rgb(51, 51, 51);
+        background: rgb(51, 51, 51);
+		cursor:pointer;
+
+	}
+
+
+.login{
+	font-size:14px;
+	margin-left: 26px;
+	margin-top: -22px;
+		}
+#image_login{
+	background-image:url(../icons/login.png);
+	background-position:left;
+	background-repeat:no-repeat;
+	width: 20px;
+	height: 30px;
+	margin-top: 8px;
+	margin-left: 2px;
+	}
+
+#image_login:hover{
+	-moz-background: url(../icons/login-over.png) left no-repeat;
+	-webkit-background:url(../icons/login-over.png) left no-repeat;
+        background: url(../icons/login-over.png) left no-repeat;
+
+}
+#add_event{
+	font-size:14px;
+	margin-left: 26px;
+	margin-top: -23px;
+	}
+
+#image_add_event{
+	background-image:url(../icons/add-event.png);
+
+	background-position:left;
+	background-repeat:no-repeat;
+	width: 20px;
+height: 30px;
+margin-top: 10px;
+
+	}
+#image_add_event:hover{
+	-moz-background: url(../icons/add-event-over.png) left no-repeat;
+	-webkit-background:url(../icons/add-event-over.png) left no-repeat;
+        background:url(../icons/add-event-over.png) left no-repeat;
+
+}
+
+#search_by_artist,#my_concerts{
+	font-size:14px;
+	margin-top:18px;
+}
+
+/*#my_concerts{ display: none }*/
+
+
+#aboutSD{
+
+padding-top: 17px;
+font-size: 13px;
+border: none;
+font-weight: normal;
+
+}
+
+nav #down_menu #sd_social
+{
+	font-size: 13px;
+	border: none;
+	font-weight: normal;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+nav #down_menu #sd_social #sd_social_fb
+{
+	float: left;
+}
+
+nav #down_menu #sd_social #sd_social_fb img, nav #down_menu #sd_social #sd_social_twitter img
+{
+	float: left;
+	margin-right: 5px;
+	
+}
+
+nav #down_menu #sd_social #sd_social_twitter img
+{
+	margin-left: 10px;
+}
+
+nav #down_menu #sd_social #sd_social_fb #sd_social_fb_text, nav #down_menu #sd_social #sd_social_twitter #sd_social_tw_text
+{
+	display: inline;
+}
+
+
+.beta
+{
+	border-radius: 3px;
+margin-left: 0px;
+width: 37px;
+height: 20px;
+position: absolute;
+color: white;
+text-align: center;
+top: 7px;
+left: 186px;
+font-size: 14px;
+}
